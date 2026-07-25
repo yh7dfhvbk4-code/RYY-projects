@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>停车管理系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 主页面 -->
+    <div id="main-page" class="main-page">
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-parking"></i>
+                <h2>停车管理</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>数据概览</span>
+                </a>
+                <a href="#" class="nav-item" data-page="parking">
+                    <i class="fas fa-car"></i>
+                    <span>车位管理</span>
+                </a>
+                <a href="#" class="nav-item" data-page="reservations">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>预约管理</span>
+                </a>
+                <a href="#" class="nav-item" data-page="vehicles">
+                    <i class="fas fa-car-side"></i>
+                    <span>车辆管理</span>
+                </a>
+                <a href="#" class="nav-item" data-page="users">
+                    <i class="fas fa-users"></i>
+                    <span>用户管理</span>
+                </a>
+                <a href="#" class="nav-item" data-page="records">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>出入记录</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="footer-info">
+                    <p>停车管理系统 v1.0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 顶部栏 -->
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <h3 id="page-title">数据概览</h3>
+                </div>
+            </div>
+
+            <!-- 页面内容 -->
+            <div class="page-content">
+                <!-- 数据概览页面 -->
+                <div id="dashboard-page" class="page active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon available">
+                                <i class="fas fa-parking"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="total-spaces">0</h3>
+                                <p>总车位</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon free">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="available-spaces">0</h3>
+                                <p>空闲车位</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon occupied">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="occupied-spaces">0</h3>
+                                <p>已占用</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon reserved">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="reserved-spaces">0</h3>
+                                <p>已预约</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="charts-container">
+                        <div class="chart-card">
+                            <h3>区域车位统计</h3>
+                            <div id="area-chart" class="chart"></div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>车位类型统计</h3>
+                            <div id="type-chart" class="chart"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 车位管理页面 -->
+                <div id="parking-page" class="page">
+                    <div class="filter-bar">
+                        <select id="area-filter" class="filter-select">
+                            <option value="">所有区域</option>
+                            <option value="教学区">教学区</option>
+                            <option value="宿舍区">宿舍区</option>
+                            <option value="办公区">办公区</option>
+                            <option value="生活区">生活区</option>
+                        </select>
+                        <select id="type-filter" class="filter-select">
+                            <option value="">所有类型</option>
+                            <option value="1">公务车位</option>
+                            <option value="2">固定车位</option>
+                            <option value="3">临时车位</option>
+                            <option value="4">充电桩</option>
+                        </select>
+                        <select id="status-filter" class="filter-select">
+                            <option value="">所有状态</option>
+                            <option value="空闲">空闲</option>
+                            <option value="占用">占用</option>
+                            <option value="预留">预留</option>
+                            <option value="维修中">维修中</option>
+                        </select>
+                        <button id="refresh-spaces" class="btn-refresh">
+                            <i class="fas fa-sync-alt"></i>
+                            刷新
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>车位编号</th>
+                                    <th>区域</th>
+                                    <th>类型</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="spaces-table-body">
+                                <!-- 动态生成 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 预约管理页面 -->
+                <div id="reservations-page" class="page">
+                    <div class="filter-bar">
+                        <button id="add-reservation-btn" class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            新建预约
+                        </button>
+                        <select id="reservation-status-filter" class="filter-select">
+                            <option value="">所有状态</option>
+                            <option value="待审批">待审批</option>
+                            <option value="已批准">已批准</option>
+                            <option value="已使用">已使用</option>
+                            <option value="已取消">已取消</option>
+                            <option value="违约">违约</option>
+                        </select>
+                        <button id="refresh-reservations" class="btn-refresh">
+                            <i class="fas fa-sync-alt"></i>
+                            刷新
+                        </button>
+                    </div>
+
+                    <!-- 新建预约弹窗 -->
+                    <div id="reservation-modal" class="modal hidden">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>新建预约</h3>
+                                <button class="modal-close">&times;</button>
+                            </div>
+                            <form id="reservation-form" class="modal-body">
+                                <div class="form-group">
+                                    <label>用户 <span class="required">*</span></label>
+                                    <select id="reservation-user" class="form-control">
+                                        <option value="">请选择用户（不选则只能选择公务车或特殊车辆）</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>车辆 <span class="required">*</span></label>
+                                    <select id="reservation-vehicle" class="form-control" required>
+                                        <option value="">请先选择用户</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>区域</label>
+                                    <select id="reservation-area" class="form-control">
+                                        <option value="">所有区域</option>
+                                        <option value="教学区">教学区</option>
+                                        <option value="宿舍区">宿舍区</option>
+                                        <option value="办公区">办公区</option>
+                                        <option value="生活区">生活区</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>车位类型</label>
+                                    <select id="reservation-type" class="form-control">
+                                        <option value="">所有可用类型</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>车位 <span class="required">*</span></label>
+                                    <select id="reservation-space" class="form-control" required>
+                                        <option value="">请先选择车辆</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>开始时间 <span class="required">*</span></label>
+                                    <input type="datetime-local" id="reservation-start" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>结束时间 <span class="required">*</span></label>
+                                    <input type="datetime-local" id="reservation-end" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>预约用途</label>
+                                    <textarea id="reservation-purpose" class="form-control" rows="3" placeholder="请输入预约用途（可选）"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-secondary modal-cancel">取消</button>
+                                    <button type="submit" class="btn-primary">提交</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>预约ID</th>
+                                    <th>用户</th>
+                                    <th>车牌号</th>
+                                    <th>车位</th>
+                                    <th>开始时间</th>
+                                    <th>结束时间</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reservations-table-body">
+                                <!-- 动态生成 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 车辆管理页面 -->
+                <div id="vehicles-page" class="page">
+                    <div class="filter-bar">
+                        <button id="add-vehicle-btn" class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            新建车辆
+                        </button>
+                        <button id="import-vehicles-btn" class="btn-primary">
+                            <i class="fas fa-file-import"></i>
+                            批量导入车辆
+                        </button>
+                        <button id="refresh-vehicles" class="btn-refresh">
+                            <i class="fas fa-sync-alt"></i>
+                            刷新
+                        </button>
+                    </div>
+
+                    <!-- 新建车辆弹窗 -->
+                    <div id="vehicle-modal" class="modal hidden">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>新建车辆</h3>
+                                <button class="modal-close">&times;</button>
+                            </div>
+                            <form id="vehicle-form" class="modal-body">
+                                <div class="form-group">
+                                    <label>车牌号 <span class="required">*</span></label>
+                                    <input type="text" id="vehicle-plate" class="form-control" required placeholder="请输入车牌号">
+                                </div>
+                                <div class="form-group">
+                                    <label>车辆类型 <span class="required">*</span></label>
+                                    <select id="vehicle-type" class="form-control" required>
+                                        <option value="">请选择车辆类型</option>
+                                        <option value="教职工">教职工</option>
+                                        <option value="学生">学生</option>
+                                        <option value="访客">访客</option>
+                                        <option value="公务车辆">公务车辆</option>
+                                        <option value="特殊车辆">特殊车辆</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>所属用户</label>
+                                    <select id="vehicle-user" class="form-control">
+                                        <option value="">公共车辆（不选）</option>
+                                    </select>
+                                    <small class="form-text text-muted">选择教职工/学生/访客时，车辆类型将自动匹配用户类型</small>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-secondary modal-cancel">取消</button>
+                                    <button type="submit" class="btn-primary">提交</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 批量导入车辆弹窗 -->
+                    <div id="import-vehicles-modal" class="modal hidden">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>批量导入车辆</h3>
+                                <button class="modal-close">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>上传CSV文件 <span class="required">*</span></label>
+                                    <input type="file" id="import-vehicles-file" class="form-control" accept=".csv" required>
+                                    <p class="help-text">CSV文件格式：车牌号,车辆类型,用户ID（可选）</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>示例数据格式</label>
+                                    <pre class="code-example">闽A12345,教职工,1001
+闽A23456,学生,1002
+闽A34567,公务车辆,
+闽A45678,特殊车辆,</pre>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-secondary modal-cancel">取消</button>
+                                    <button type="button" id="import-vehicles-submit" class="btn-primary">导入</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>车辆ID</th>
+                                    <th>车牌号</th>
+                                    <th>车辆类型</th>
+                                    <th>所属用户</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vehicles-table-body">
+                                <!-- 动态生成 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 用户管理页面 -->
+                <div id="users-page" class="page">
+                    <div class="filter-bar">
+                        <button id="add-user-btn" class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            新建用户
+                        </button>
+                        <button id="import-users-btn" class="btn-primary">
+                            <i class="fas fa-file-import"></i>
+                            批量导入用户
+                        </button>
+                        <select id="user-type-filter" class="filter-select">
+                            <option value="">所有类型</option>
+                            <option value="教职工">教职工</option>
+                            <option value="学生">学生</option>
+                            <option value="访客">访客</option>
+                        </select>
+                        <button id="refresh-users" class="btn-refresh">
+                            <i class="fas fa-sync-alt"></i>
+                            刷新
+                        </button>
+                    </div>
+
+                    <!-- 新建用户弹窗 -->
+                    <div id="user-modal" class="modal hidden">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>新建用户</h3>
+                                <button class="modal-close">&times;</button>
+                            </div>
+                            <form id="user-form" class="modal-body">
+                                <div class="form-group">
+                                    <label>用户ID <span class="required">*</span></label>
+                                    <input type="number" id="user-id" class="form-control" required placeholder="请输入用户ID">
+                                </div>
+                                <div class="form-group">
+                                    <label>用户名 <span class="required">*</span></label>
+                                    <input type="text" id="user-name" class="form-control" required placeholder="请输入用户名">
+                                </div>
+                                <div class="form-group">
+                                    <label>用户类型 <span class="required">*</span></label>
+                                    <select id="user-type" class="form-control" required>
+                                        <option value="">请选择用户类型</option>
+                                        <option value="教职工">教职工</option>
+                                        <option value="学生">学生</option>
+                                        <option value="访客">访客</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>手机号</label>
+                                    <input type="tel" id="user-phone" class="form-control" placeholder="请输入手机号">
+                                </div>
+                                <div class="form-group">
+                                    <label>信用分</label>
+                                    <input type="number" id="user-credit" class="form-control" value="100" min="0" max="100">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-secondary modal-cancel">取消</button>
+                                    <button type="submit" class="btn-primary">提交</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 批量导入用户弹窗 -->
+                    <div id="import-users-modal" class="modal hidden">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>批量导入用户</h3>
+                                <button class="modal-close">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>上传CSV文件 <span class="required">*</span></label>
+                                    <input type="file" id="import-users-file" class="form-control" accept=".csv" required>
+                                    <p class="help-text">CSV文件格式：用户ID,用户名,用户类型,手机号,信用分</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>示例数据格式</label>
+                                    <pre class="code-example">1001,张三,教职工,13800138000,100
+1002,李四,学生,13900139000,100
+1003,王五,访客,13700137000,100</pre>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-secondary modal-cancel">取消</button>
+                                    <button type="button" id="import-users-submit" class="btn-primary">导入</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>用户ID</th>
+                                    <th>用户名</th>
+                                    <th>类型</th>
+                                    <th>手机号</th>
+                                    <th>信用分</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table-body">
+                                <!-- 动态生成 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 出入记录页面 -->
+                <div id="records-page" class="page">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="entry">入场记录</button>
+                        <button class="tab-btn" data-tab="exit">出场记录</button>
+                    </div>
+
+                    <div id="entry-tab" class="tab-content active">
+                        <div class="filter-bar">
+                            <button id="vehicle-entry-btn" class="btn-primary">
+                                <i class="fas fa-sign-in-alt"></i>
+                                车辆入场
+                            </button>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>记录ID</th>
+                                        <th>车牌号</th>
+                                        <th>入场时间</th>
+                                        <th>入口</th>
+                                        <th>车位</th>
+                                        <th>预约ID</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="entry-records-body">
+                                    <!-- 动态生成 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="exit-tab" class="tab-content">
+                        <div class="filter-bar">
+                            <button id="vehicle-exit-btn" class="btn-primary">
+                                <i class="fas fa-sign-out-alt"></i>
+                                车辆出场
+                            </button>
+                            <button id="unpaid-records-btn" class="btn-secondary">
+                                <i class="fas fa-credit-card"></i>
+                                未支付记录
+                            </button>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>记录ID</th>
+                                        <th>车牌号</th>
+                                        <th>出场时间</th>
+                                        <th>出口</th>
+                                        <th>停车时长</th>
+                                        <th>费用</th>
+                                        <th>支付状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="exit-records-body">
+                                    <!-- 动态生成 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 车辆入场弹窗 -->
+    <div id="entry-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>车辆入场</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="entry-form" class="modal-body">
+                <div class="form-group">
+                    <label>车牌号 <span class="required">*</span></label>
+                    <input type="text" id="entry-plate" class="form-control" required placeholder="请输入车牌号">
+                </div>
+                <div class="form-group">
+                    <label>入口 <span class="required">*</span></label>
+                    <select id="entry-gate" class="form-control" required>
+                        <option value="">请选择入口</option>
+                        <option value="东门入口">东门入口</option>
+                        <option value="西门入口">西门入口</option>
+                        <option value="南门入口">南门入口</option>
+                        <option value="北门入口">北门入口</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>是否有预约 <span class="required">*</span></label>
+                    <select id="entry-has-reservation" class="form-control" required>
+                        <option value="false">否</option>
+                        <option value="true">是</option>
+                    </select>
+                </div>
+                <div id="reservation-fields" class="hidden">
+                    <div class="form-group">
+                        <label>预约码 <span class="required">*</span></label>
+                        <input type="number" id="entry-reservation-code" class="form-control" placeholder="请输入预约码">
+                    </div>
+                </div>
+                <div id="no-reservation-fields" class="hidden">
+                    <div id="vehicle-info-fields" class="hidden">
+                        <div class="form-group">
+                            <label>姓名 <span class="required">*</span></label>
+                            <input type="text" id="entry-user-name" class="form-control" placeholder="请输入姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>电话号码 <span class="required">*</span></label>
+                            <input type="text" id="entry-user-phone" class="form-control" placeholder="请输入电话号码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>车辆类型 <span class="required">*</span></label>
+                        <select id="entry-vehicle-type" class="form-control">
+                            <option value="">请选择车辆类型</option>
+                            <option value="教职工">教职工</option>
+                            <option value="学生">学生</option>
+                            <option value="访客">访客</option>
+                            <option value="公务车辆">公务车辆</option>
+                            <option value="特殊车辆">特殊车辆</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>区域 <span class="required">*</span></label>
+                        <select id="entry-area" class="form-control">
+                            <option value="">请选择区域</option>
+                            <option value="教学区">教学区</option>
+                            <option value="宿舍区">宿舍区</option>
+                            <option value="办公区">办公区</option>
+                            <option value="生活区">生活区</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>车位类型 <span class="required">*</span></label>
+                        <select id="entry-space-type" class="form-control">
+                            <option value="">请先选择车辆类型</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>车位号 <span class="required">*</span></label>
+                        <select id="entry-space-number" class="form-control">
+                            <option value="">请先选择区域和车位类型</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary modal-cancel">取消</button>
+                    <button type="submit" class="btn-primary">确认入场</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 车辆出场弹窗 -->
+    <div id="exit-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>车辆出场</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="exit-form" class="modal-body">
+                <div class="form-group">
+                    <label>车牌号 <span class="required">*</span></label>
+                    <input type="text" id="exit-plate" class="form-control" required placeholder="请输入车牌号">
+                </div>
+                <div class="form-group">
+                    <label>出口 <span class="required">*</span></label>
+                    <select id="exit-gate" class="form-control" required>
+                        <option value="">请选择出口</option>
+                        <option value="东门出口">东门出口</option>
+                        <option value="西门出口">西门出口</option>
+                        <option value="南门出口">南门出口</option>
+                        <option value="北门出口">北门出口</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary modal-cancel">取消</button>
+                    <button type="submit" class="btn-primary">确认出场</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 支付弹窗 -->
+    <div id="payment-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>支付停车费</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-info">
+                    <div class="info-row">
+                        <span class="info-label">车牌号:</span>
+                        <span class="info-value" id="payment-plate">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">入场时间:</span>
+                        <span class="info-value" id="payment-in-time">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">出场时间:</span>
+                        <span class="info-value" id="payment-out-time">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">停车时长:</span>
+                        <span class="info-value" id="payment-hours">-</span>
+                    </div>
+                    <div class="info-row total">
+                        <span class="info-label">应付金额:</span>
+                        <span class="info-value" id="payment-fee">-</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>支付方式 <span class="required">*</span></label>
+                    <select id="payment-method" class="form-control" required>
+                        <option value="现金">现金</option>
+                        <option value="微信">微信</option>
+                        <option value="支付宝">支付宝</option>
+                        <option value="银行卡">银行卡</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary modal-cancel">取消</button>
+                    <button type="button" id="confirm-payment-btn" class="btn-primary">确认支付</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
