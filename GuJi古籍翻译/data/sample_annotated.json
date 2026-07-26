@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "description": "古籍命名实体与关系标注示例数据",
+    "entity_types": ["PER", "LOC", "OFF", "EVT", "ORG", "TIME"],
+    "relation_types": ["任职", "籍贯", "事件参与", "地点位于", "亲属", "师承", "任职于", "发生于", "发生于时"],
+    "tagging_scheme": "BIO"
+  },
+  "documents": [
+    {
+      "id": "doc_001",
+      "text": "屈原者，名平，楚之同姓也。为楚怀王左徒。",
+      "entities": [
+        {"id": "e1", "text": "屈原", "type": "PER", "start": 0, "end": 2},
+        {"id": "e2", "text": "楚", "type": "LOC", "start": 8, "end": 9},
+        {"id": "e3", "text": "楚怀王", "type": "PER", "start": 11, "end": 14},
+        {"id": "e4", "text": "左徒", "type": "OFF", "start": 14, "end": 16}
+      ],
+      "relations": [
+        {"id": "r1", "head": "e1", "tail": "e4", "type": "任职"},
+        {"id": "r2", "head": "e1", "tail": "e2", "type": "籍贯"}
+      ]
+    },
+    {
+      "id": "doc_002",
+      "text": "贾生名谊，洛阳人也。年十八，以能诵诗属书闻于郡中。",
+      "entities": [
+        {"id": "e1", "text": "贾生", "type": "PER", "start": 0, "end": 2},
+        {"id": "e2", "text": "谊", "type": "PER", "start": 3, "end": 4},
+        {"id": "e3", "text": "洛阳", "type": "LOC", "start": 5, "end": 7},
+        {"id": "e4", "text": "十八", "type": "TIME", "start": 9, "end": 11}
+      ],
+      "relations": [
+        {"id": "r1", "head": "e1", "tail": "e3", "type": "籍贯"},
+        {"id": "r2", "head": "e1", "tail": "e2", "type": "亲属"}
+      ]
+    },
+    {
+      "id": "doc_003",
+      "text": "秦昭王与楚婚，欲与怀王会。怀王欲行，屈平曰：秦，虎狼之国，不可信。",
+      "entities": [
+        {"id": "e1", "text": "秦昭王", "type": "PER", "start": 0, "end": 3},
+        {"id": "e2", "text": "楚", "type": "LOC", "start": 4, "end": 5},
+        {"id": "e3", "text": "怀王", "type": "PER", "start": 8, "end": 10},
+        {"id": "e4", "text": "秦", "type": "LOC", "start": 15, "end": 16},
+        {"id": "e5", "text": "屈平", "type": "PER", "start": 11, "end": 13}
+      ],
+      "relations": [
+        {"id": "r1", "head": "e5", "tail": "e4", "type": "籍贯"}
+      ]
+    },
+    {
+      "id": "doc_004",
+      "text": "孝文帝召以为博士。是时贾生年二十余，最为少。",
+      "entities": [
+        {"id": "e1", "text": "孝文帝", "type": "PER", "start": 0, "end": 3},
+        {"id": "e2", "text": "博士", "type": "OFF", "start": 6, "end": 8},
+        {"id": "e3", "text": "贾生", "type": "PER", "start": 10, "end": 12},
+        {"id": "e4", "text": "二十余", "type": "TIME", "start": 13, "end": 16}
+      ],
+      "relations": [
+        {"id": "r1", "head": "e3", "tail": "e2", "type": "任职"}
+      ]
+    },
+    {
+      "id": "doc_005",
+      "text": "乃以贾生为长沙王太傅。绛、灌、东阳侯、冯敬之属尽害之。",
+      "entities": [
+        {"id": "e1", "text": "贾生", "type": "PER", "start": 3, "end": 5},
+        {"id": "e2", "text": "长沙王太傅", "type": "OFF", "start": 6, "end": 11},
+        {"id": "e3", "text": "绛", "type": "PER", "start": 12, "end": 13},
+        {"id": "e4", "text": "灌", "type": "PER", "start": 14, "end": 15},
+        {"id": "e5", "text": "东阳侯", "type": "OFF", "start": 16, "end": 19},
+        {"id": "e6", "text": "冯敬", "type": "PER", "start": 20, "end": 22}
+      ],
+      "relations": [
+        {"id": "r1", "head": "e1", "tail": "e2", "type": "任职"}
+      ]
+    }
+  ]
+}

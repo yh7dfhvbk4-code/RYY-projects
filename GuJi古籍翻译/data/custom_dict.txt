@@ -1,0 +1,78 @@
+# ============================================
+# 古籍自定义词典
+# 每行一个词条，格式: 词语\t词性标签
+# 词性标签参考: PER(人物), LOC(地点), OFF(官职), EVT(事件), ORG(组织), TIME(时间)
+# ============================================
+
+# ---- 人物 ----
+屈原	PER
+贾谊	PER
+楚怀王	PER
+秦昭王	PER
+顷襄王	PER
+子兰	PER
+上官大夫	PER
+孝文帝	PER
+吴廷尉	PER
+冯敬	PER
+绛	PER
+灌	PER
+屈平	PER
+贾生	PER
+太史公	PER
+
+# ---- 地点 ----
+长沙	LOC
+洛阳	LOC
+武关	LOC
+汨罗江	LOC
+楚	LOC
+秦	LOC
+赵	LOC
+河南	LOC
+
+# ---- 官职 ----
+左徒	OFF
+太中大夫	OFF
+博士	OFF
+令尹	OFF
+长沙王太傅	OFF
+廷尉	OFF
+河南守	OFF
+公卿	OFF
+东阳侯	OFF
+
+# ---- 事件 ----
+和议	EVT
+征伐	EVT
+巡幸	EVT
+祭祀	EVT
+册封	EVT
+
+# ---- 书名/篇名 ----
+离骚	TITLE
+天问	TITLE
+招魂	TITLE
+哀郢	TITLE
+鵩鸟赋	TITLE
+
+# ---- 朝代 ----
+楚	DYN
+秦	DYN
+汉	DYN
+
+# ---- 古籍常见虚词与特殊表达 ----
+者	PART
+也	PART
+矣	PART
+焉	PART
+乎	PART
+哉	PART
+曰	VERB
+为	VERB
+乃	ADV
+以	PREP
+于	PREP
+与	PREP
+之	PART
+其	PRON

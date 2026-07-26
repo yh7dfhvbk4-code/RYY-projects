@@ -1,0 +1,970 @@
+2026-05-12 17:58:38 | INFO     | __main__:main:165 - ============================================================
+2026-05-12 17:58:38 | INFO     | __main__:main:166 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 17:58:38 | INFO     | __main__:main:167 - ============================================================
+2026-05-12 17:58:38 | INFO     | __main__:main:168 - 运行模式: clean
+2026-05-12 17:58:38 | INFO     | __main__:main:169 - 输入文件: data/sample_raw.txt
+2026-05-12 17:58:38 | INFO     | __main__:load_config:69 - 配置文件加载成功: config/config.yaml
+2026-05-12 17:59:07 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 17:59:07 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: CTB9_TOK_POS | 最大句长: 128 | 保留标点: True
+2026-05-12 17:59:07 | INFO     | src.ner.predictor:__init__:99 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 18:05:02 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 18:05:02 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 18:05:02 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 18:05:02 | INFO     | __main__:main:175 - 运行模式: clean
+2026-05-12 18:05:02 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 18:05:02 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 18:05:07 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 18:05:07 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: CTB9_TOK_POS | 最大句长: 128 | 保留标点: True
+2026-05-12 18:05:07 | INFO     | src.ner.predictor:__init__:99 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 18:08:09 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 18:08:09 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 18:08:11 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Unable to retrieve routing information，知识图谱功能不可用
+2026-05-12 18:08:11 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 18:08:11 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 18:08:11 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: clean | 输入: data/sample_raw.txt
+2026-05-12 18:08:11 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 18:08:11 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 18:08:11 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 18:08:12 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 18:08:12 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 18:08:12 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 18:08:12 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 18:13:05 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 18:13:05 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 18:13:05 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 18:13:05 | INFO     | __main__:main:175 - 运行模式: ner
+2026-05-12 18:13:05 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 18:13:05 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 18:13:11 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 18:13:11 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: CTB9_TOK_POS | 最大句长: 128 | 保留标点: True
+2026-05-12 18:13:11 | INFO     | src.ner.predictor:__init__:99 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 18:13:22 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 18:13:22 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 18:13:24 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Unable to retrieve routing information，知识图谱功能不可用
+2026-05-12 18:13:24 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 18:13:24 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 18:13:24 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: ner | 输入: data/sample_raw.txt
+2026-05-12 18:13:24 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 18:13:24 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 18:13:24 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 18:13:24 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 18:13:24 | INFO     | src.pipeline:step_tokenize:245 - 步骤 2/5: 分词断句
+2026-05-12 18:13:24 | INFO     | src.tokenizer:process:411 - 开始分词处理，文本长度: 940 字符
+2026-05-12 18:13:25 | INFO     | src.tokenizer:process:419 - 断句完成，共 51 个句子
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 18:13:25 | INFO     | src.tokenizer:process:435 - 分词完成 | 句子数: 51 | 词元数: 931
+2026-05-12 18:13:25 | INFO     | src.pipeline:step_ner:258 - 步骤 3/5: 命名实体识别
+2026-05-12 18:13:25 | WARNING  | src.ner.predictor:predict:168 - 模型或Tokenizer未加载，返回空结果
+2026-05-12 18:13:25 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 18:13:25 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 18:13:25 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 18:13:25 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 18:13:25 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 19:59:22 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 19:59:22 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 19:59:22 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 19:59:22 | INFO     | __main__:main:175 - 运行模式: ner
+2026-05-12 19:59:22 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 19:59:22 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 19:59:28 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 19:59:28 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: CTB9_TOK_POS | 最大句长: 128 | 保留标点: True
+2026-05-12 19:59:28 | INFO     | src.ner.predictor:__init__:99 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 19:59:33 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 19:59:33 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 19:59:35 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Unable to retrieve routing information，知识图谱功能不可用
+2026-05-12 19:59:35 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 19:59:35 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 19:59:35 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: ner | 输入: data/sample_raw.txt
+2026-05-12 19:59:35 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 19:59:35 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 19:59:35 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 19:59:35 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 19:59:35 | INFO     | src.pipeline:step_tokenize:245 - 步骤 2/5: 分词断句
+2026-05-12 19:59:35 | INFO     | src.tokenizer:process:411 - 开始分词处理，文本长度: 940 字符
+2026-05-12 19:59:35 | INFO     | src.tokenizer:process:419 - 断句完成，共 51 个句子
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 19:59:35 | INFO     | src.tokenizer:process:435 - 分词完成 | 句子数: 51 | 词元数: 931
+2026-05-12 19:59:35 | INFO     | src.pipeline:step_ner:258 - 步骤 3/5: 命名实体识别
+2026-05-12 19:59:35 | WARNING  | src.ner.predictor:predict:168 - 模型或Tokenizer未加载，返回空结果
+2026-05-12 19:59:35 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 19:59:35 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 19:59:35 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 19:59:35 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 19:59:35 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:03:03 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:03:03 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:03:03 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:03:03 | INFO     | __main__:main:175 - 运行模式: ner
+2026-05-12 20:03:03 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 20:03:03 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:03:07 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 20:03:07 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: CTB9_TOK_POS | 最大句长: 128 | 保留标点: True
+2026-05-12 20:03:07 | WARNING  | src.pipeline:_init_modules:193 - NER预测器初始化失败: NERPredictor.__init__() got an unexpected keyword argument 'model_path'，将使用规则方法
+2026-05-12 20:03:12 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 20:03:12 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 20:03:14 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Unable to retrieve routing information，知识图谱功能不可用
+2026-05-12 20:03:14 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 20:03:14 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 20:03:14 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: ner | 输入: data/sample_raw.txt
+2026-05-12 20:03:14 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 20:03:14 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 20:03:14 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 20:03:14 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 20:03:14 | INFO     | src.pipeline:step_tokenize:245 - 步骤 2/5: 分词断句
+2026-05-12 20:03:14 | INFO     | src.tokenizer:process:411 - 开始分词处理，文本长度: 940 字符
+2026-05-12 20:03:14 | INFO     | src.tokenizer:process:419 - 断句完成，共 51 个句子
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:03:14 | INFO     | src.tokenizer:process:435 - 分词完成 | 句子数: 51 | 词元数: 931
+2026-05-12 20:03:14 | INFO     | src.pipeline:step_ner:258 - 步骤 3/5: 命名实体识别
+2026-05-12 20:03:14 | INFO     | src.pipeline:_rule_based_ner:480 - 规则NER识别到 67 个实体
+2026-05-12 20:03:14 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 20:03:14 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 20:03:14 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 20:03:14 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:03:14 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:05:06 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:05:06 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:05:06 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:05:06 | INFO     | __main__:main:175 - 运行模式: ner
+2026-05-12 20:05:06 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 20:05:06 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:05:10 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 20:05:10 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: CTB9_TOK_POS | 最大句长: 128 | 保留标点: True
+2026-05-12 20:05:10 | WARNING  | src.pipeline:_init_modules:193 - NER预测器初始化失败: NERPredictor.__init__() got an unexpected keyword argument 'model_path'，将使用规则方法
+2026-05-12 20:05:19 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 20:05:19 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 20:05:22 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Unable to retrieve routing information，知识图谱功能不可用
+2026-05-12 20:05:22 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 20:05:22 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 20:05:22 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: ner | 输入: data/sample_raw.txt
+2026-05-12 20:05:22 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 20:05:22 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 20:05:22 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 20:05:22 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 20:05:22 | INFO     | src.pipeline:step_tokenize:245 - 步骤 2/5: 分词断句
+2026-05-12 20:05:22 | INFO     | src.tokenizer:process:411 - 开始分词处理，文本长度: 940 字符
+2026-05-12 20:05:22 | INFO     | src.tokenizer:process:419 - 断句完成，共 51 个句子
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:05:22 | INFO     | src.tokenizer:process:435 - 分词完成 | 句子数: 51 | 词元数: 931
+2026-05-12 20:05:22 | INFO     | src.pipeline:step_ner:258 - 步骤 3/5: 命名实体识别
+2026-05-12 20:05:22 | INFO     | src.pipeline:_rule_based_ner:480 - 规则NER识别到 67 个实体
+2026-05-12 20:05:22 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 20:05:22 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 20:05:22 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 20:05:22 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:05:22 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:06:01 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:06:01 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:06:01 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:06:01 | INFO     | __main__:main:175 - 运行模式: ner
+2026-05-12 20:06:01 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 20:06:01 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:06:05 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 20:06:05 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: CTB9_TOK_POS | 最大句长: 128 | 保留标点: True
+2026-05-12 20:06:05 | WARNING  | src.pipeline:_init_modules:193 - NER预测器初始化失败: NERPredictor.__init__() got an unexpected keyword argument 'model_path'，将使用规则方法
+2026-05-12 20:06:19 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 20:06:20 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 20:06:22 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Unable to retrieve routing information，知识图谱功能不可用
+2026-05-12 20:06:22 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 20:06:22 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 20:06:22 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: ner | 输入: data/sample_raw.txt
+2026-05-12 20:06:22 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 20:06:22 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 20:06:22 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 20:06:22 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 20:06:22 | INFO     | src.pipeline:step_tokenize:245 - 步骤 2/5: 分词断句
+2026-05-12 20:06:22 | INFO     | src.tokenizer:process:411 - 开始分词处理，文本长度: 940 字符
+2026-05-12 20:06:22 | INFO     | src.tokenizer:process:419 - 断句完成，共 51 个句子
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:06:22 | INFO     | src.tokenizer:process:435 - 分词完成 | 句子数: 51 | 词元数: 931
+2026-05-12 20:06:22 | INFO     | src.pipeline:step_ner:258 - 步骤 3/5: 命名实体识别
+2026-05-12 20:06:22 | INFO     | src.pipeline:_rule_based_ner:480 - 规则NER识别到 67 个实体
+2026-05-12 20:06:22 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 20:06:22 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 20:06:22 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 20:06:22 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:06:22 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:12:58 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:12:58 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:12:58 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:12:58 | INFO     | __main__:main:175 - 运行模式: ner
+2026-05-12 20:12:58 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 20:12:58 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:13:02 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 20:13:02 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: CTB9_TOK_POS | 最大句长: 128 | 保留标点: True
+2026-05-12 20:13:02 | WARNING  | src.pipeline:_init_modules:193 - NER预测器初始化失败: NERPredictor.__init__() got an unexpected keyword argument 'model_path'，将使用规则方法
+2026-05-12 20:13:07 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 20:13:07 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 20:13:09 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Unable to retrieve routing information，知识图谱功能不可用
+2026-05-12 20:13:09 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 20:13:09 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 20:13:09 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: ner | 输入: data/sample_raw.txt
+2026-05-12 20:13:09 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 20:13:09 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 20:13:09 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 20:13:09 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 20:13:09 | INFO     | src.pipeline:step_tokenize:245 - 步骤 2/5: 分词断句
+2026-05-12 20:13:09 | INFO     | src.tokenizer:process:411 - 开始分词处理，文本长度: 940 字符
+2026-05-12 20:13:09 | INFO     | src.tokenizer:process:419 - 断句完成，共 51 个句子
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:13:09 | INFO     | src.tokenizer:process:435 - 分词完成 | 句子数: 51 | 词元数: 931
+2026-05-12 20:13:09 | INFO     | src.pipeline:step_ner:258 - 步骤 3/5: 命名实体识别
+2026-05-12 20:13:09 | INFO     | src.pipeline:_rule_based_ner:480 - 规则NER识别到 67 个实体
+2026-05-12 20:13:09 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 20:13:09 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 20:13:09 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 20:13:10 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:13:10 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:22:08 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:22:08 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:22:08 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:22:08 | INFO     | __main__:main:175 - 运行模式: ner
+2026-05-12 20:22:08 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 20:22:08 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:22:12 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 20:22:12 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: hanlp.pretrained.tok.CTB9_TOK_ELECTRA_BASE_CRF | 最大句长: 128 | 保留标点: True
+2026-05-12 20:22:12 | WARNING  | src.pipeline:_init_modules:193 - NER预测器初始化失败: NERPredictor.__init__() got an unexpected keyword argument 'model_path'，将使用规则方法
+2026-05-12 20:22:16 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 20:22:16 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 20:22:18 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Couldn't connect to 127.0.0.1:7687 (resolved to ('127.0.0.1:7687',)):
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。)，知识图谱功能不可用
+2026-05-12 20:22:18 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 20:22:18 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 20:22:18 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: ner | 输入: data/sample_raw.txt
+2026-05-12 20:22:18 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 20:22:18 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 20:22:18 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 20:22:18 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 20:22:18 | INFO     | src.pipeline:step_tokenize:245 - 步骤 2/5: 分词断句
+2026-05-12 20:22:18 | INFO     | src.tokenizer:process:411 - 开始分词处理，文本长度: 940 字符
+2026-05-12 20:22:18 | INFO     | src.tokenizer:process:419 - 断句完成，共 51 个句子
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:22:18 | INFO     | src.tokenizer:process:435 - 分词完成 | 句子数: 51 | 词元数: 931
+2026-05-12 20:22:18 | INFO     | src.pipeline:step_ner:258 - 步骤 3/5: 命名实体识别
+2026-05-12 20:22:18 | INFO     | src.pipeline:_rule_based_ner:480 - 规则NER识别到 67 个实体
+2026-05-12 20:22:18 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 20:22:18 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 20:22:18 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 20:22:18 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:22:18 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:27:54 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:27:54 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:27:54 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:27:54 | INFO     | __main__:main:175 - 运行模式: ner
+2026-05-12 20:27:54 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 20:27:54 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:27:58 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 20:27:58 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: hanlp.pretrained.tok.CTB9_TOK_ELECTRA_BASE_CRF | 最大句长: 128 | 保留标点: True
+2026-05-12 20:27:58 | WARNING  | src.pipeline:_init_modules:193 - NER预测器初始化失败: NERPredictor.__init__() got an unexpected keyword argument 'model_path'，将使用规则方法
+2026-05-12 20:28:06 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 20:28:06 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 20:28:08 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Couldn't connect to 127.0.0.1:7687 (resolved to ('127.0.0.1:7687',)):
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。)，知识图谱功能不可用
+2026-05-12 20:28:08 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 20:28:08 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 20:28:08 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: ner | 输入: data/sample_raw.txt
+2026-05-12 20:28:08 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 20:28:08 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 20:28:08 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 20:28:08 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 20:28:08 | INFO     | src.pipeline:step_tokenize:245 - 步骤 2/5: 分词断句
+2026-05-12 20:28:08 | INFO     | src.tokenizer:process:411 - 开始分词处理，文本长度: 940 字符
+2026-05-12 20:28:08 | INFO     | src.tokenizer:process:419 - 断句完成，共 51 个句子
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | WARNING  | src.tokenizer:_load_hanlp:202 - HanLP模型加载失败: module 'hanlp.pretrained.tok' has no attribute 'CTB9_TOK_POS'，将使用基于规则的分词方式
+2026-05-12 20:28:08 | INFO     | src.tokenizer:process:435 - 分词完成 | 句子数: 51 | 词元数: 931
+2026-05-12 20:28:08 | INFO     | src.pipeline:step_ner:258 - 步骤 3/5: 命名实体识别
+2026-05-12 20:28:08 | INFO     | src.pipeline:_rule_based_ner:480 - 规则NER识别到 67 个实体
+2026-05-12 20:28:08 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 20:28:08 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 20:28:08 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 20:28:08 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:28:08 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:38:50 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:38:50 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:38:50 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:38:50 | INFO     | __main__:main:175 - 运行模式: ner
+2026-05-12 20:38:50 | INFO     | __main__:main:176 - 输入文件: data/sample_raw.txt
+2026-05-12 20:38:50 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:38:56 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 20:38:56 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: hanlp.pretrained.mtl.CLOSE_TOK_POS_NER_SRL_DEP_SDP_CON_ELECTRA_SMALL_ZH | 最大句长: 128 | 保留标点: True
+2026-05-12 20:38:56 | WARNING  | src.pipeline:_init_modules:193 - NER预测器初始化失败: NERPredictor.__init__() got an unexpected keyword argument 'model_path'，将使用规则方法
+2026-05-12 20:39:00 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 20:39:00 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 20:39:02 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Couldn't connect to 127.0.0.1:7687 (resolved to ('127.0.0.1:7687',)):
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。)，知识图谱功能不可用
+2026-05-12 20:39:02 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 20:39:02 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 20:39:02 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: ner | 输入: data/sample_raw.txt
+2026-05-12 20:39:02 | INFO     | src.pipeline:step_clean:233 - 步骤 1/5: 文本清洗
+2026-05-12 20:39:02 | INFO     | src.text_cleaner:clean:333 - 开始文本清洗，原始长度: 950 字符
+2026-05-12 20:39:02 | INFO     | src.text_cleaner:_get_converter:129 - 繁简转换器加载成功，模式: t2s
+2026-05-12 20:39:02 | INFO     | src.text_cleaner:clean:356 - 文本清洗完成，清洗后长度: 940 字符
+2026-05-12 20:39:02 | INFO     | src.pipeline:step_tokenize:245 - 步骤 2/5: 分词断句
+2026-05-12 20:39:02 | INFO     | src.tokenizer:process:407 - 开始分词处理，文本长度: 940 字符
+2026-05-12 20:39:02 | INFO     | src.tokenizer:process:415 - 断句完成，共 51 个句子
+2026-05-12 20:39:58 | INFO     | src.tokenizer:_load_hanlp:184 - HanLP模型加载成功
+2026-05-12 20:40:00 | INFO     | src.tokenizer:process:431 - 分词完成 | 句子数: 51 | 词元数: 0
+2026-05-12 20:40:00 | INFO     | src.pipeline:step_ner:258 - 步骤 3/5: 命名实体识别
+2026-05-12 20:40:00 | INFO     | src.pipeline:_rule_based_ner:480 - 规则NER识别到 67 个实体
+2026-05-12 20:40:00 | INFO     | src.pipeline:_finalize:414 - 流水线执行完成
+2026-05-12 20:40:00 | INFO     | src.pipeline:save:124 - 结果已保存至: output\sample_raw_result.json
+2026-05-12 20:40:00 | INFO     | __main__:main:251 - 处理完成！
+2026-05-12 20:40:00 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:40:00 | INFO     | src.knowledge_graph:close:162 - Neo4j连接已关闭
+2026-05-12 20:42:04 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:42:04 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:42:04 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:42:04 | INFO     | __main__:main:175 - 运行模式: build_kg
+2026-05-12 20:42:04 | INFO     | __main__:main:176 - 输入文件: data/sample_annotated.json
+2026-05-12 20:42:04 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:42:08 | INFO     | src.text_cleaner:__init__:99 - 古籍文本清洗器初始化完成 | 转换模式: t2s | 噪声字符数: 19 | 最小行长度: 2
+2026-05-12 20:42:08 | INFO     | src.tokenizer:__init__:167 - 古籍分词器初始化 | 模型: hanlp.pretrained.mtl.CLOSE_TOK_POS_NER_SRL_DEP_SDP_CON_ELECTRA_SMALL_ZH | 最大句长: 128 | 保留标点: True
+2026-05-12 20:42:08 | WARNING  | src.pipeline:_init_modules:193 - NER预测器初始化失败: NERPredictor.__init__() got an unexpected keyword argument 'model_path'，将使用规则方法
+2026-05-12 20:42:10 | INFO     | src.relation_extractor:__init__:220 - 关系分类模型初始化 | 预训练: bert-base-chinese | 关系数: 10
+2026-05-12 20:42:10 | INFO     | src.relation_extractor:__init__:392 - 关系抽取器初始化完成 | 关系数: 10
+2026-05-12 20:42:13 | WARNING  | src.knowledge_graph:__init__:85 - Neo4j连接失败: Couldn't connect to 127.0.0.1:7687 (resolved to ('127.0.0.1:7687',)):
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。)，知识图谱功能不可用
+2026-05-12 20:42:13 | INFO     | src.knowledge_graph:__init__:246 - 知识图谱构建器初始化 | 去重策略: exact | 批量大小: 500 | 清空重建: False
+2026-05-12 20:42:13 | INFO     | src.pipeline:_init_modules:222 - 流水线所有模块初始化完成
+2026-05-12 20:42:13 | INFO     | src.pipeline:run:334 - 流水线启动 | 模式: build_kg | 输入: data/sample_annotated.json
+2026-05-12 20:42:13 | INFO     | src.knowledge_graph:build:422 - 开始构建知识图谱 | 实体数: 23 | 关系数: 7
+2026-05-12 20:43:05 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:43:05 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:43:05 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:43:05 | INFO     | __main__:main:175 - 运行模式: full
+2026-05-12 20:43:05 | INFO     | __main__:main:176 - 输入文件: data/sample_annotated.json
+2026-05-12 20:43:05 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:43:05 | INFO     | __main__:main:205 - 少样本学习训练模式
+2026-05-12 20:43:09 | INFO     | src.ner.dataset:from_annotated_file:199 - 从 data/sample_annotated.json 加载 5 个标注样本
+2026-05-12 20:43:09 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 5 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:43:09 | INFO     | __main__:main:211 - 加载标注数据: 5 个样本
+2026-05-12 20:43:12 | INFO     | src.few_shot:__init__:212 - 少样本训练器初始化 | 预训练模型: bert-base-chinese | 设备: cpu
+2026-05-12 20:43:12 | INFO     | src.few_shot:train_with_augmentation:417 - 开始数据增强 | 原始样本数: 5 | 增强倍数: 3
+2026-05-12 20:43:12 | INFO     | src.ner.dataset:augment:418 - 数据增强完成 | 原始: 5 | 增强后: 20 | 增强倍数: 3
+2026-05-12 20:43:12 | INFO     | src.few_shot:train_with_augmentation:421 - 数据增强完成 | 增强后样本数: 20
+2026-05-12 20:43:12 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 16 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:43:12 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 4 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:43:12 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 0 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:43:12 | INFO     | src.ner.dataset:split_dataset:653 - 数据集划分完成 | 训练: 16 | 验证: 4 | 测试: 0
+2026-05-12 20:43:12 | INFO     | src.ner.predictor:train_ner_model:383 - 训练设备: cpu
+2026-05-12 20:47:28 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:47:28 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:47:28 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:47:28 | INFO     | __main__:main:175 - 运行模式: full
+2026-05-12 20:47:28 | INFO     | __main__:main:176 - 输入文件: data/sample_annotated.json
+2026-05-12 20:47:28 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:47:28 | INFO     | __main__:main:205 - 少样本学习训练模式
+2026-05-12 20:47:33 | INFO     | src.ner.dataset:from_annotated_file:199 - 从 data/sample_annotated.json 加载 5 个标注样本
+2026-05-12 20:47:33 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 5 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:47:33 | INFO     | __main__:main:211 - 加载标注数据: 5 个样本
+2026-05-12 20:47:37 | INFO     | src.few_shot:__init__:212 - 少样本训练器初始化 | 预训练模型: bert-base-chinese | 设备: cpu
+2026-05-12 20:47:37 | INFO     | src.few_shot:train_with_augmentation:417 - 开始数据增强 | 原始样本数: 5 | 增强倍数: 3
+2026-05-12 20:47:37 | INFO     | src.ner.dataset:augment:418 - 数据增强完成 | 原始: 5 | 增强后: 20 | 增强倍数: 3
+2026-05-12 20:47:37 | INFO     | src.few_shot:train_with_augmentation:421 - 数据增强完成 | 增强后样本数: 20
+2026-05-12 20:47:37 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 16 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:47:37 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 4 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:47:37 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 0 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:47:37 | INFO     | src.ner.dataset:split_dataset:653 - 数据集划分完成 | 训练: 16 | 验证: 4 | 测试: 0
+2026-05-12 20:47:37 | INFO     | src.ner.predictor:train_ner_model:383 - 训练设备: cpu
+2026-05-12 20:49:25 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:49:25 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:49:25 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:49:25 | INFO     | __main__:main:175 - 运行模式: full
+2026-05-12 20:49:25 | INFO     | __main__:main:176 - 输入文件: data/sample_annotated.json
+2026-05-12 20:49:25 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:49:25 | INFO     | __main__:main:205 - 少样本学习训练模式
+2026-05-12 20:49:29 | INFO     | src.ner.dataset:from_annotated_file:199 - 从 data/sample_annotated.json 加载 5 个标注样本
+2026-05-12 20:49:29 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 5 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:49:29 | INFO     | __main__:main:211 - 加载标注数据: 5 个样本
+2026-05-12 20:49:32 | INFO     | src.few_shot:__init__:212 - 少样本训练器初始化 | 预训练模型: bert-base-chinese | 设备: cpu
+2026-05-12 20:49:32 | INFO     | src.few_shot:train_with_augmentation:417 - 开始数据增强 | 原始样本数: 5 | 增强倍数: 3
+2026-05-12 20:49:32 | INFO     | src.ner.dataset:augment:418 - 数据增强完成 | 原始: 5 | 增强后: 20 | 增强倍数: 3
+2026-05-12 20:49:32 | INFO     | src.few_shot:train_with_augmentation:421 - 数据增强完成 | 增强后样本数: 20
+2026-05-12 20:49:32 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 16 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:49:32 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 4 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:49:32 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 0 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:49:32 | INFO     | src.ner.dataset:split_dataset:653 - 数据集划分完成 | 训练: 16 | 验证: 4 | 测试: 0
+2026-05-12 20:49:32 | INFO     | src.ner.predictor:train_ner_model:383 - 训练设备: cpu
+2026-05-12 20:51:34 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:51:34 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:51:34 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:51:34 | INFO     | __main__:main:175 - 运行模式: full
+2026-05-12 20:51:34 | INFO     | __main__:main:176 - 输入文件: data/sample_annotated.json
+2026-05-12 20:51:34 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:51:34 | INFO     | __main__:main:205 - 少样本学习训练模式
+2026-05-12 20:54:08 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 20:54:08 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 20:54:08 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 20:54:08 | INFO     | __main__:main:175 - 运行模式: full
+2026-05-12 20:54:08 | INFO     | __main__:main:176 - 输入文件: data/sample_annotated.json
+2026-05-12 20:54:08 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 20:54:08 | INFO     | __main__:main:205 - 少样本学习训练模式
+2026-05-12 20:54:12 | INFO     | src.ner.dataset:from_annotated_file:199 - 从 data/sample_annotated.json 加载 5 个标注样本
+2026-05-12 20:54:12 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 5 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:54:12 | INFO     | __main__:main:211 - 加载标注数据: 5 个样本
+2026-05-12 20:54:16 | INFO     | src.few_shot:__init__:212 - 少样本训练器初始化 | 预训练模型: bert-base-chinese | 设备: cpu
+2026-05-12 20:54:16 | INFO     | src.few_shot:train_with_augmentation:417 - 开始数据增强 | 原始样本数: 5 | 增强倍数: 3
+2026-05-12 20:54:16 | INFO     | src.ner.dataset:augment:418 - 数据增强完成 | 原始: 5 | 增强后: 20 | 增强倍数: 3
+2026-05-12 20:54:16 | INFO     | src.few_shot:train_with_augmentation:421 - 数据增强完成 | 增强后样本数: 20
+2026-05-12 20:54:16 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 16 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:54:16 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 4 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:54:16 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 0 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 20:54:16 | INFO     | src.ner.dataset:split_dataset:653 - 数据集划分完成 | 训练: 16 | 验证: 4 | 测试: 0
+2026-05-12 20:54:16 | INFO     | src.ner.predictor:train_ner_model:383 - 训练设备: cpu
+2026-05-12 20:54:20 | INFO     | src.ner.model:__init__:331 - BERT-CRF模型初始化 | 标签数: 13 | CRF: True | Dropout: 0.1
+2026-05-12 20:54:21 | INFO     | src.ner.model:from_pretrained_bert:455 - 从 bert-base-chinese 加载预训练权重完成
+2026-05-12 20:54:22 | INFO     | src.ner.predictor:train_ner_model:469 - Epoch 1 | 训练损失: 68.5848
+2026-05-12 20:54:22 | INFO     | src.ner.predictor:train_ner_model:474 - Epoch 1 | 验证损失: 58.7621
+2026-05-12 21:01:20 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 21:01:20 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 21:01:20 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 21:01:20 | INFO     | __main__:main:175 - 运行模式: full
+2026-05-12 21:01:20 | INFO     | __main__:main:176 - 输入文件: data/sample_annotated.json
+2026-05-12 21:01:20 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 21:01:20 | INFO     | __main__:main:205 - 少样本学习训练模式
+2026-05-12 21:01:25 | INFO     | src.ner.dataset:from_annotated_file:199 - 从 data/sample_annotated.json 加载 5 个标注样本
+2026-05-12 21:01:25 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 5 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 21:01:25 | INFO     | __main__:main:211 - 加载标注数据: 5 个样本
+2026-05-12 21:01:34 | INFO     | src.few_shot:__init__:212 - 少样本训练器初始化 | 预训练模型: bert-base-chinese | 设备: cpu
+2026-05-12 21:01:34 | INFO     | src.few_shot:train_with_augmentation:417 - 开始数据增强 | 原始样本数: 5 | 增强倍数: 3
+2026-05-12 21:01:34 | INFO     | src.ner.dataset:augment:418 - 数据增强完成 | 原始: 5 | 增强后: 20 | 增强倍数: 3
+2026-05-12 21:01:34 | INFO     | src.few_shot:train_with_augmentation:421 - 数据增强完成 | 增强后样本数: 20
+2026-05-12 21:01:34 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 16 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 21:01:34 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 4 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 21:01:34 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 0 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 21:01:34 | INFO     | src.ner.dataset:split_dataset:653 - 数据集划分完成 | 训练: 16 | 验证: 4 | 测试: 0
+2026-05-12 21:01:34 | INFO     | src.ner.predictor:train_ner_model:265 - 训练设备: cpu
+2026-05-12 21:01:45 | INFO     | src.ner.model:__init__:331 - BERT-CRF模型初始化 | 标签数: 13 | CRF: True | Dropout: 0.1
+2026-05-12 21:01:53 | INFO     | src.ner.model:from_pretrained_bert:455 - 从 bert-base-chinese 加载预训练权重完成
+2026-05-12 21:01:55 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 1 | 训练损失: 74.2829
+2026-05-12 21:01:55 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 1 | 验证损失: 62.7552
+2026-05-12 21:01:55 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:01:55 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:01:55 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 62.7552)
+2026-05-12 21:01:57 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 2 | 训练损失: 74.5839
+2026-05-12 21:01:57 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 2 | 验证损失: 51.1178
+2026-05-12 21:01:57 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:01:57 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:01:57 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 51.1178)
+2026-05-12 21:01:58 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 3 | 训练损失: 59.9476
+2026-05-12 21:01:58 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 3 | 验证损失: 41.7299
+2026-05-12 21:01:58 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:01:59 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:01:59 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 41.7299)
+2026-05-12 21:02:00 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 4 | 训练损失: 48.8472
+2026-05-12 21:02:00 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 4 | 验证损失: 34.9371
+2026-05-12 21:02:00 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:02:00 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:02:00 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 34.9371)
+2026-05-12 21:02:01 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 5 | 训练损失: 40.6510
+2026-05-12 21:02:01 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 5 | 验证损失: 30.9134
+2026-05-12 21:02:01 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:02:02 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:02:02 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 30.9134)
+2026-05-12 21:02:03 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 6 | 训练损失: 36.1608
+2026-05-12 21:02:03 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 6 | 验证损失: 29.0914
+2026-05-12 21:02:03 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:02:03 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:02:03 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 29.0914)
+2026-05-12 21:02:05 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 7 | 训练损失: 33.7580
+2026-05-12 21:02:05 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 7 | 验证损失: 28.2722
+2026-05-12 21:02:05 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:02:05 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:02:05 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 28.2722)
+2026-05-12 21:02:06 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 8 | 训练损失: 33.2564
+2026-05-12 21:02:06 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 8 | 验证损失: 27.7023
+2026-05-12 21:02:06 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:02:07 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:02:07 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 27.7023)
+2026-05-12 21:02:08 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 9 | 训练损失: 31.8880
+2026-05-12 21:02:08 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 9 | 验证损失: 27.2637
+2026-05-12 21:02:08 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:02:08 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:02:08 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 27.2637)
+2026-05-12 21:02:09 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 10 | 训练损失: 31.4198
+2026-05-12 21:02:10 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 10 | 验证损失: 27.0090
+2026-05-12 21:02:10 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:02:10 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:02:10 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 27.0090)
+2026-05-12 21:02:10 | INFO     | src.ner.predictor:train_ner_model:378 - 训练完成
+2026-05-12 21:02:10 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:01 | INFO     | __main__:main:172 - ============================================================
+2026-05-12 21:05:01 | INFO     | __main__:main:173 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 21:05:01 | INFO     | __main__:main:174 - ============================================================
+2026-05-12 21:05:01 | INFO     | __main__:main:175 - 运行模式: full
+2026-05-12 21:05:01 | INFO     | __main__:main:176 - 输入文件: data/sample_annotated.json
+2026-05-12 21:05:01 | INFO     | __main__:load_config:76 - 配置文件加载成功: config/config.yaml
+2026-05-12 21:05:01 | INFO     | __main__:main:205 - 少样本学习训练模式
+2026-05-12 21:05:06 | INFO     | src.ner.dataset:from_annotated_file:199 - 从 data/sample_annotated.json 加载 5 个标注样本
+2026-05-12 21:05:06 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 5 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 21:05:06 | INFO     | __main__:main:211 - 加载标注数据: 5 个样本
+2026-05-12 21:05:09 | INFO     | src.few_shot:__init__:212 - 少样本训练器初始化 | 预训练模型: bert-base-chinese | 设备: cpu
+2026-05-12 21:05:09 | INFO     | src.few_shot:train_with_augmentation:417 - 开始数据增强 | 原始样本数: 5 | 增强倍数: 3
+2026-05-12 21:05:09 | INFO     | src.ner.dataset:augment:418 - 数据增强完成 | 原始: 5 | 增强后: 20 | 增强倍数: 3
+2026-05-12 21:05:09 | INFO     | src.few_shot:train_with_augmentation:421 - 数据增强完成 | 增强后样本数: 20
+2026-05-12 21:05:09 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 16 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 21:05:09 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 4 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 21:05:09 | INFO     | src.ner.dataset:__init__:113 - NER数据集初始化 | 样本数: 0 | 标签数: 13 | 最大序列长度: 256
+2026-05-12 21:05:09 | INFO     | src.ner.dataset:split_dataset:653 - 数据集划分完成 | 训练: 16 | 验证: 4 | 测试: 0
+2026-05-12 21:05:09 | INFO     | src.ner.predictor:train_ner_model:265 - 训练设备: cpu
+2026-05-12 21:05:14 | INFO     | src.ner.model:__init__:331 - BERT-CRF模型初始化 | 标签数: 13 | CRF: True | Dropout: 0.1
+2026-05-12 21:05:15 | INFO     | src.ner.model:from_pretrained_bert:455 - 从 bert-base-chinese 加载预训练权重完成
+2026-05-12 21:05:16 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 1 | 训练损失: 68.8001
+2026-05-12 21:05:16 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 1 | 验证损失: 57.8071
+2026-05-12 21:05:16 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:17 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:17 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 57.8071)
+2026-05-12 21:05:18 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 2 | 训练损失: 68.9028
+2026-05-12 21:05:18 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 2 | 验证损失: 48.4659
+2026-05-12 21:05:18 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:18 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:18 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 48.4659)
+2026-05-12 21:05:19 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 3 | 训练损失: 56.5736
+2026-05-12 21:05:19 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 3 | 验证损失: 41.4490
+2026-05-12 21:05:19 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:20 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:20 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 41.4490)
+2026-05-12 21:05:21 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 4 | 训练损失: 47.7217
+2026-05-12 21:05:21 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 4 | 验证损失: 36.5318
+2026-05-12 21:05:21 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:21 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:21 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 36.5318)
+2026-05-12 21:05:22 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 5 | 训练损失: 41.7666
+2026-05-12 21:05:22 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 5 | 验证损失: 33.4077
+2026-05-12 21:05:22 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:23 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:23 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 33.4077)
+2026-05-12 21:05:24 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 6 | 训练损失: 38.4291
+2026-05-12 21:05:24 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 6 | 验证损失: 31.5885
+2026-05-12 21:05:24 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:24 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:24 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 31.5885)
+2026-05-12 21:05:25 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 7 | 训练损失: 36.1441
+2026-05-12 21:05:26 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 7 | 验证损失: 30.5057
+2026-05-12 21:05:26 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:26 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:26 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 30.5057)
+2026-05-12 21:05:27 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 8 | 训练损失: 34.2590
+2026-05-12 21:05:27 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 8 | 验证损失: 29.7841
+2026-05-12 21:05:27 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:28 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:28 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 29.7841)
+2026-05-12 21:05:29 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 9 | 训练损失: 33.9666
+2026-05-12 21:05:29 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 9 | 验证损失: 29.2950
+2026-05-12 21:05:29 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:29 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:29 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 29.2950)
+2026-05-12 21:05:30 | INFO     | src.ner.predictor:train_ner_model:351 - Epoch 10 | 训练损失: 33.2929
+2026-05-12 21:05:30 | INFO     | src.ner.predictor:train_ner_model:356 - Epoch 10 | 验证损失: 29.0366
+2026-05-12 21:05:30 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:31 | INFO     | src.ner.predictor:save:221 - 模型已保存至: models/ner
+2026-05-12 21:05:31 | INFO     | src.ner.predictor:train_ner_model:370 - 最佳模型已保存 (val_loss: 29.0366)
+2026-05-12 21:05:31 | INFO     | src.ner.predictor:train_ner_model:378 - 训练完成
+2026-05-12 21:05:31 | INFO     | src.ner.predictor:__init__:72 - NER预测器初始化完成 | 设备: cpu
+2026-05-12 21:05:31 | INFO     | __main__:main:224 - 少样本学习训练完成！
+2026-05-12 21:11:08 | INFO     | __main__:main:183 - ============================================================
+2026-05-12 21:11:08 | INFO     | __main__:main:184 - 面向古籍文本的语义理解与知识图谱构建
+2026-05-12 21:11:08 | INFO     | __main__:main:185 - ============================================================
+2026-05-12 21:11:08 | INFO     | __main__:main:186 - 运行模式: full
+2026-05-12 21:11:08 | INFO     | __main__:load_config:77 - 配置文件加载成功: config/config.yaml
+2026-05-12 21:11:08 | INFO     | __main__:main:207 - 启动Web API服务，端口: 8000

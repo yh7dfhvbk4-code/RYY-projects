@@ -1,0 +1,415 @@
+{
+  "raw_text_length": 950,
+  "cleaned_text_length": 940,
+  "entities": [
+    {
+      "text": "太史公",
+      "type": "PER",
+      "start": 0,
+      "end": 3
+    },
+    {
+      "text": "屈原",
+      "type": "PER",
+      "start": 33,
+      "end": 35
+    },
+    {
+      "text": "贾生",
+      "type": "PER",
+      "start": 54,
+      "end": 56
+    },
+    {
+      "text": "屈原",
+      "type": "PER",
+      "start": 61,
+      "end": 63
+    },
+    {
+      "text": "游诸侯",
+      "type": "PER",
+      "start": 67,
+      "end": 70
+    },
+    {
+      "text": "屈原",
+      "type": "PER",
+      "start": 105,
+      "end": 107
+    },
+    {
+      "text": "楚",
+      "type": "LOC",
+      "start": 112,
+      "end": 113
+    },
+    {
+      "text": "为楚怀王左徒",
+      "type": "OFF",
+      "start": 118,
+      "end": 124
+    },
+    {
+      "text": "楚",
+      "type": "LOC",
+      "start": 119,
+      "end": 120
+    },
+    {
+      "text": "则与王",
+      "type": "PER",
+      "start": 141,
+      "end": 144
+    },
+    {
+      "text": "对诸侯",
+      "type": "PER",
+      "start": 162,
+      "end": 165
+    },
+    {
+      "text": "上官大夫",
+      "type": "OFF",
+      "start": 172,
+      "end": 176
+    },
+    {
+      "text": "怀王",
+      "type": "PER",
+      "start": 189,
+      "end": 191
+    },
+    {
+      "text": "屈原",
+      "type": "PER",
+      "start": 192,
+      "end": 194
+    },
+    {
+      "text": "上官大夫",
+      "type": "OFF",
+      "start": 207,
+      "end": 211
+    },
+    {
+      "text": "平疾王",
+      "type": "PER",
+      "start": 272,
+      "end": 275
+    },
+    {
+      "text": "之害公",
+      "type": "PER",
+      "start": 290,
+      "end": 293
+    },
+    {
+      "text": "秦",
+      "type": "LOC",
+      "start": 324,
+      "end": 325
+    },
+    {
+      "text": "楚",
+      "type": "LOC",
+      "start": 328,
+      "end": 329
+    },
+    {
+      "text": "与怀王",
+      "type": "PER",
+      "start": 332,
+      "end": 335
+    },
+    {
+      "text": "怀王",
+      "type": "PER",
+      "start": 337,
+      "end": 339
+    },
+    {
+      "text": "秦",
+      "type": "LOC",
+      "start": 347,
+      "end": 348
+    },
+    {
+      "text": "怀王",
+      "type": "PER",
+      "start": 364,
+      "end": 366
+    },
+    {
+      "text": "稚子子",
+      "type": "PER",
+      "start": 366,
+      "end": 369
+    },
+    {
+      "text": "兰劝王",
+      "type": "PER",
+      "start": 369,
+      "end": 372
+    },
+    {
+      "text": "秦",
+      "type": "LOC",
+      "start": 378,
+      "end": 379
+    },
+    {
+      "text": "怀王",
+      "type": "PER",
+      "start": 382,
+      "end": 384
+    },
+    {
+      "text": "秦",
+      "type": "LOC",
+      "start": 391,
+      "end": 392
+    },
+    {
+      "text": "留怀王",
+      "type": "PER",
+      "start": 399,
+      "end": 402
+    },
+    {
+      "text": "怀王",
+      "type": "PER",
+      "start": 407,
+      "end": 409
+    },
+    {
+      "text": "赵",
+      "type": "LOC",
+      "start": 416,
+      "end": 417
+    },
+    {
+      "text": "赵",
+      "type": "LOC",
+      "start": 418,
+      "end": 419
+    },
+    {
+      "text": "秦",
+      "type": "LOC",
+      "start": 424,
+      "end": 425
+    },
+    {
+      "text": "秦",
+      "type": "LOC",
+      "start": 429,
+      "end": 430
+    },
+    {
+      "text": "长子",
+      "type": "PER",
+      "start": 435,
+      "end": 437
+    },
+    {
+      "text": "顷襄王",
+      "type": "PER",
+      "start": 437,
+      "end": 440
+    },
+    {
+      "text": "弟子兰为令尹",
+      "type": "OFF",
+      "start": 444,
+      "end": 450
+    },
+    {
+      "text": "楚",
+      "type": "LOC",
+      "start": 451,
+      "end": 452
+    },
+    {
+      "text": "既咎子",
+      "type": "PER",
+      "start": 453,
+      "end": 456
+    },
+    {
+      "text": "劝怀王",
+      "type": "PER",
+      "start": 458,
+      "end": 461
+    },
+    {
+      "text": "秦",
+      "type": "LOC",
+      "start": 462,
+      "end": 463
+    },
+    {
+      "text": "楚",
+      "type": "LOC",
+      "start": 480,
+      "end": 481
+    },
+    {
+      "text": "心怀王",
+      "type": "PER",
+      "start": 484,
+      "end": 487
+    },
+    {
+      "text": "贾生",
+      "type": "PER",
+      "start": 561,
+      "end": 563
+    },
+    {
+      "text": "洛阳",
+      "type": "LOC",
+      "start": 566,
+      "end": 568
+    },
+    {
+      "text": "文皇帝",
+      "type": "PER",
+      "start": 609,
+      "end": 612
+    },
+    {
+      "text": "守吴公",
+      "type": "PER",
+      "start": 618,
+      "end": 621
+    },
+    {
+      "text": "贾生",
+      "type": "PER",
+      "start": 651,
+      "end": 653
+    },
+    {
+      "text": "通诸子",
+      "type": "PER",
+      "start": 657,
+      "end": 660
+    },
+    {
+      "text": "文帝",
+      "type": "PER",
+      "start": 665,
+      "end": 667
+    },
+    {
+      "text": "贾生",
+      "type": "PER",
+      "start": 676,
+      "end": 678
+    },
+    {
+      "text": "贾生",
+      "type": "PER",
+      "start": 701,
+      "end": 703
+    },
+    {
+      "text": "孝文帝",
+      "type": "PER",
+      "start": 730,
+      "end": 733
+    },
+    {
+      "text": "中至太中大夫",
+      "type": "OFF",
+      "start": 741,
+      "end": 747
+    },
+    {
+      "text": "贾生",
+      "type": "PER",
+      "start": 749,
+      "end": 751
+    },
+    {
+      "text": "秦",
+      "type": "LOC",
+      "start": 813,
+      "end": 814
+    },
+    {
+      "text": "孝文帝",
+      "type": "PER",
+      "start": 820,
+      "end": 823
+    },
+    {
+      "text": "及列侯",
+      "type": "PER",
+      "start": 841,
+      "end": 844
+    },
+    {
+      "text": "贾生",
+      "type": "PER",
+      "start": 852,
+      "end": 854
+    },
+    {
+      "text": "是天子",
+      "type": "PER",
+      "start": 858,
+      "end": 861
+    },
+    {
+      "text": "生任公",
+      "type": "PER",
+      "start": 864,
+      "end": 867
+    },
+    {
+      "text": "东阳侯",
+      "type": "PER",
+      "start": 875,
+      "end": 878
+    },
+    {
+      "text": "贾生",
+      "type": "PER",
+      "start": 889,
+      "end": 891
+    },
+    {
+      "text": "洛阳",
+      "type": "LOC",
+      "start": 894,
+      "end": 896
+    },
+    {
+      "text": "是天子",
+      "type": "PER",
+      "start": 916,
+      "end": 919
+    },
+    {
+      "text": "贾生",
+      "type": "PER",
+      "start": 931,
+      "end": 933
+    },
+    {
+      "text": "为长沙王太傅",
+      "type": "OFF",
+      "start": 933,
+      "end": 939
+    }
+  ],
+  "relations": [],
+  "kg_stats": null,
+  "elapsed_time": {
+    "文本清洗": 0.006443023681640625,
+    "分词断句": 57.711021184921265,
+    "命名实体识别": 0.004027128219604492
+  }
+}

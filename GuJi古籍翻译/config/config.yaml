@@ -1,0 +1,94 @@
+# ============================================
+# 面向古籍文本的语义理解与知识图谱构建 - 全局配置
+# ============================================
+
+# ---------- 文本清洗配置 ----------
+text_cleaner:
+  noise_chars: "□◇◆☆★○●◎△▲▽▼※〓§№"
+  conversion_mode: "t2s"
+  merge_whitespace: true
+  strip_lines: true
+  min_line_length: 2
+
+# ---------- 分词与断句配置 ----------
+tokenizer:
+  # 修复：替换为【有效HanLP模型名】，解决分词报错
+  hanlp_model: "hanlp.pretrained.tok.SIGHAN2005_PKU_TOK"
+  custom_dict_path: null
+  max_sentence_length: 128
+  sentence_delimiters: "。！？；
+"
+  keep_punctuation: true
+
+# ---------- 命名实体识别配置 ----------
+ner:
+  pretrained_model: "bert-base-chinese"
+  entity_types:
+    - "PER"
+    - "LOC"
+    - "OFF"
+    - "EVT"
+    - "ORG"
+    - "TIME"
+  tagging_scheme: "BIO"
+  max_seq_length: 256
+  batch_size: 16
+  learning_rate: 2.0e-5
+  num_epochs: 10
+  early_stop_patience: 3
+  dropout: 0.1
+  model_save_dir: "models/ner"
+  # 修复：新增 model_path，让pipeline加载训练好的模型
+  model_path: "models/ner"
+  few_shot:
+    enabled: false
+    min_samples_per_class: 5
+    augmentation_factor: 3
+
+# ---------- 关系抽取配置 ----------
+relation_extractor:
+  pretrained_model: "bert-base-chinese"
+  relation_types:
+    - "任职"
+    - "籍贯"
+    - "事件参与"
+    - "地点位于"
+    - "亲属"
+    - "师承"
+    - "任职于"
+    - "发生于"
+    - "发生于时"
+  max_seq_length: 256
+  batch_size: 16
+  learning_rate: 2.0e-5
+  num_epochs: 10
+  classification_threshold: 0.5
+  model_save_dir: "models/re"
+
+# ---------- 知识图谱配置 ----------
+knowledge_graph:
+  # 修复：关闭知识图谱（无需Neo4j，避免连接报错）
+  enabled: false
+  neo4j:
+    uri: "bolt://127.0.0.1:7687"
+    username: "neo4j"
+    password: "20060106"
+    database: "GuJi"
+    max_connection_pool_size: 50
+    connection_timeout: 30
+  clear_before_build: false
+  batch_insert_size: 500
+  dedup_strategy: "exact"
+
+# ---------- 日志配置 ----------
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {module}:{function}:{line} - {message}"
+  log_file: "logs/guji.log"
+  rotation: "10 MB"
+  retention: "7 days"
+
+# ---------- 设备配置 ----------
+device:
+  type: "auto"
+  gpu_id: 0
