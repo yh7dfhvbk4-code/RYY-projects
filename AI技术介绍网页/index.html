@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI探索 - 人工智能主题网站</title>
+  <!-- Bootstrap 5.3.8 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- 自定义样式 -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 导航栏容器（由 components.js 动态注入） -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero区域 -->
+  <section class="hero-section">
+    <canvas id="particles-canvas"></canvas>
+    <div class="container hero-content">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="hero-badge animate-on-scroll">
+            <i class="fas fa-rocket me-1"></i> 探索人工智能的无限可能
+          </div>
+          <h1 class="hero-title animate-on-scroll">
+            重新定义未来的<br><span class="gradient-text">人工智能技术</span>
+          </h1>
+          <p class="hero-subtitle animate-on-scroll">
+            从深度学习到通用人工智能，AI正在以前所未有的速度改变我们的世界。让我们一起探索这项革命性技术的过去、现在与未来。
+          </p>
+          <div class="d-flex gap-3 animate-on-scroll">
+            <a href="technology.html" class="btn btn-glow btn-glow-primary">
+              <i class="fas fa-microchip me-2"></i>了解技术
+            </a>
+            <a href="applications.html" class="btn btn-glow btn-glow-outline">
+              <i class="fas fa-globe me-2"></i>探索应用
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+          <div class="hero-visual">
+            <div class="ai-orb">
+              <div class="orb-ring ring-1"></div>
+              <div class="orb-ring ring-2"></div>
+              <div class="orb-ring ring-3"></div>
+              <div class="orb-core"><i class="fas fa-brain"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 统计数字 -->
+  <section class="section-padding" style="background: var(--dark-light);">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-6 col-md-3 animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number counter" data-target="5400" data-suffix="亿">5400亿</div>
+            <div class="stat-label">2025年全球AI市场规模(美元)</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number counter" data-target="97" data-suffix="%">0</div>
+            <div class="stat-label">企业计划加大AI投资</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number counter" data-target="180" data-suffix="万+">0</div>
+            <div class="stat-label">AI相关专利申请量</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number counter" data-target="40" data-suffix="%">0</div>
+            <div class="stat-label">岗位将被AI重塑</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI核心领域 -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title animate-on-scroll">AI <span class="gradient-text">核心领域</span></h2>
+        <p class="section-desc mx-auto animate-on-scroll">人工智能涵盖多个技术方向，正在深刻改变各行各业</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card-custom">
+            <div class="card-icon card-icon-primary"><i class="fas fa-network-wired"></i></div>
+            <h4>深度学习</h4>
+            <p>通过多层神经网络模拟人脑处理信息的方式，实现图像识别、语音识别等复杂任务的突破性进展。</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card-custom">
+            <div class="card-icon card-icon-secondary"><i class="fas fa-language"></i></div>
+            <h4>自然语言处理</h4>
+            <p>让机器理解、生成和处理人类语言，从机器翻译到智能对话，NLP正在打破人机沟通的壁垒。</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card-custom">
+            <div class="card-icon card-icon-accent"><i class="fas fa-eye"></i></div>
+            <h4>计算机视觉</h4>
+            <p>赋予机器"看"的能力，使其能够识别、分析和理解图像与视频中的内容，赋能自动驾驶等领域。</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card-custom">
+            <div class="card-icon card-icon-warning"><i class="fas fa-robot"></i></div>
+            <h4>机器人技术</h4>
+            <p>结合感知、决策与执行，打造能够与物理世界交互的智能体，从工业机器人到服务机器人。</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card-custom">
+            <div class="card-icon card-icon-primary"><i class="fas fa-database"></i></div>
+            <h4>大数据分析</h4>
+            <p>从海量数据中提取价值，AI驱动的数据分析帮助企业做出更精准的决策和预测。</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card-custom">
+            <div class="card-icon card-icon-secondary"><i class="fas fa-shield-halved"></i></div>
+            <h4>AI安全</h4>
+            <p>确保AI系统的可靠性、鲁棒性和公平性，防范潜在风险，构建可信赖的人工智能。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 打字机效果区域 -->
+  <section class="section-padding" style="background: var(--dark-light);">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 animate-on-scroll">
+          <h2 class="section-title mb-3">AI正在<span class="gradient-text">改变一切</span></h2>
+          <p class="text-muted mb-4">从日常对话到科学研究，人工智能正在以前所未有的方式重塑我们的生活方式和工作模式。</p>
+          <div class="d-flex align-items-center mb-3">
+            <div class="me-3" style="color: var(--secondary); font-size: 1.5rem;"><i class="fas fa-terminal"></i></div>
+            <div>
+              <span class="text-muted">AI &gt; </span>
+              <span id="typewriter-text" style="color: var(--primary); font-weight: 600;"></span>
+              <span class="cursor-blink">|</span>
+            </div>
+          </div>
+          <div class="mt-4">
+            <a href="trends.html" class="btn btn-glow btn-glow-primary btn-sm">
+              <i class="fas fa-chart-line me-2"></i>查看发展趋势
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0 animate-on-scroll">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="card-custom text-center" style="padding: 1.5rem;">
+                <i class="fas fa-stethoscope mb-2" style="font-size: 2rem; color: var(--secondary);"></i>
+                <h6 class="mb-1">医疗健康</h6>
+                <small class="text-muted">疾病早筛</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card-custom text-center" style="padding: 1.5rem;">
+                <i class="fas fa-car mb-2" style="font-size: 2rem; color: var(--accent);"></i>
+                <h6 class="mb-1">自动驾驶</h6>
+                <small class="text-muted">智能出行</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card-custom text-center" style="padding: 1.5rem;">
+                <i class="fas fa-graduation-cap mb-2" style="font-size: 2rem; color: var(--primary);"></i>
+                <h6 class="mb-1">智慧教育</h6>
+                <small class="text-muted">个性化学习</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card-custom text-center" style="padding: 1.5rem;">
+                <i class="fas fa-chart-pie mb-2" style="font-size: 2rem; color: #fdcb6e;"></i>
+                <h6 class="mb-1">金融科技</h6>
+                <small class="text-muted">风控决策</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚容器（由 components.js 动态注入） -->
+  <div id="footer-container"></div>
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 公共组件 -->
+  <script src="js/components.js"></script>
+  <!-- AI对话 -->
+  <script src="js/ai-chat.js"></script>
+  <!-- 自定义JS -->
+  <script src="js/main.js"></script>
+  <script>
+    renderNavbar('index.html');
+    renderFooter();
+    renderAIChatWidget();
+
+    // 初始化粒子动画
+    initParticles('particles-canvas');
+    // 初始化打字机效果
+    initTypewriter('typewriter-text', [
+      '正在生成创意文案...',
+      '正在诊断医学影像...',
+      '正在规划最优路径...',
+      '正在翻译多国语言...',
+      '正在预测市场趋势...'
+    ], 80);
+  </script>
+</body>
+</html>

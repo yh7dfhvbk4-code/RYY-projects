@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>应用场景 - AI探索</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 导航栏容器（由 components.js 动态注入） -->
+  <div id="navbar-container"></div>
+
+  <!-- 页面Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="animate-on-scroll">AI <span class="gradient-text">应用场景</span></h1>
+        <p class="mt-3 animate-on-scroll">人工智能已渗透到社会生活的方方面面，正在创造前所未有的价值</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用场景分类筛选 -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title animate-on-scroll">行业<span class="gradient-text">应用全景</span></h2>
+        <p class="section-desc mx-auto animate-on-scroll">点击分类标签，探索AI在不同领域的创新应用</p>
+      </div>
+
+      <!-- 筛选按钮 -->
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5 animate-on-scroll">
+        <button class="btn btn-glow btn-glow-primary filter-btn active" data-filter="all">
+          <i class="fas fa-th me-1"></i> 全部
+        </button>
+        <button class="btn btn-glow btn-glow-outline filter-btn" data-filter="health">
+          <i class="fas fa-heartbeat me-1"></i> 医疗健康
+        </button>
+        <button class="btn btn-glow btn-glow-outline filter-btn" data-filter="finance">
+          <i class="fas fa-chart-line me-1"></i> 金融科技
+        </button>
+        <button class="btn btn-glow btn-glow-outline filter-btn" data-filter="education">
+          <i class="fas fa-graduation-cap me-1"></i> 智慧教育
+        </button>
+        <button class="btn btn-glow btn-glow-outline filter-btn" data-filter="transport">
+          <i class="fas fa-car me-1"></i> 交通出行
+        </button>
+        <button class="btn btn-glow btn-glow-outline filter-btn" data-filter="creative">
+          <i class="fas fa-palette me-1"></i> 创意设计
+        </button>
+      </div>
+
+      <!-- 应用卡片Grid布局 -->
+      <div class="app-grid" id="app-cards">
+        <!-- 医疗健康 -->
+        <div class="app-card animate-on-scroll filter-item" data-category="health">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(0,206,201,0.2), rgba(108,92,231,0.2));">
+            <i class="fas fa-x-ray" style="color: var(--secondary);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>医学影像诊断</h5>
+            <p>AI通过深度学习分析CT、MRI等医学影像，辅助医生发现早期病变，诊断准确率可达95%以上，大幅提升筛查效率。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(0,206,201,0.15);color:var(--secondary);">深度学习</span>
+              <span class="app-tag" style="background:rgba(108,92,231,0.15);color:var(--primary);">计算机视觉</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-card animate-on-scroll filter-item" data-category="health">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(253,121,168,0.2), rgba(108,92,231,0.2));">
+            <i class="fas fa-dna" style="color: var(--accent);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>药物研发</h5>
+            <p>AI加速药物分子筛选和靶点发现，将新药研发周期从10年缩短至3-5年，显著降低研发成本。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(253,121,168,0.15);color:var(--accent);">生成式AI</span>
+              <span class="app-tag" style="background:rgba(0,206,201,0.15);color:var(--secondary);">分子模拟</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-card animate-on-scroll filter-item" data-category="health">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(253,203,110,0.2), rgba(225,112,85,0.2));">
+            <i class="fas fa-stethoscope" style="color: #fdcb6e;"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>智能问诊系统</h5>
+            <p>基于NLP的智能问诊助手，能够理解患者症状描述，提供初步诊断建议和就医指导，缓解医疗资源紧张。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(253,203,110,0.15);color:#fdcb6e;">NLP</span>
+              <span class="app-tag" style="background:rgba(108,92,231,0.15);color:var(--primary);">知识图谱</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 金融科技 -->
+        <div class="app-card animate-on-scroll filter-item" data-category="finance">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(108,92,231,0.2), rgba(0,206,201,0.2));">
+            <i class="fas fa-shield-halved" style="color: var(--primary);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>智能风控</h5>
+            <p>AI实时分析交易行为和用户画像，精准识别欺诈交易，误报率降低60%，保护用户资金安全。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(108,92,231,0.15);color:var(--primary);">异常检测</span>
+              <span class="app-tag" style="background:rgba(0,206,201,0.15);color:var(--secondary);">实时分析</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-card animate-on-scroll filter-item" data-category="finance">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(253,121,168,0.2), rgba(253,203,110,0.2));">
+            <i class="fas fa-robot" style="color: var(--accent);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>量化交易</h5>
+            <p>基于机器学习的量化策略，实时分析市场数据和新闻情绪，做出毫秒级交易决策，超越人工交易表现。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(253,121,168,0.15);color:var(--accent);">预测模型</span>
+              <span class="app-tag" style="background:rgba(253,203,110,0.15);color:#fdcb6e;">高频交易</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 智慧教育 -->
+        <div class="app-card animate-on-scroll filter-item" data-category="education">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(0,206,201,0.2), rgba(0,184,148,0.2));">
+            <i class="fas fa-user-graduate" style="color: var(--secondary);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>个性化学习</h5>
+            <p>AI根据学生的学习进度和知识薄弱点，动态调整学习路径和内容难度，实现真正的因材施教。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(0,206,201,0.15);color:var(--secondary);">自适应学习</span>
+              <span class="app-tag" style="background:rgba(108,92,231,0.15);color:var(--primary);">推荐系统</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-card animate-on-scroll filter-item" data-category="education">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(108,92,231,0.2), rgba(253,121,168,0.2));">
+            <i class="fas fa-chalkboard-teacher" style="color: var(--primary);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>AI助教</h5>
+            <p>智能助教可以24小时在线答疑、批改作业、生成练习题，释放教师精力专注于创造性教学活动。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(108,92,231,0.15);color:var(--primary);">大语言模型</span>
+              <span class="app-tag" style="background:rgba(253,121,168,0.15);color:var(--accent);">智能问答</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 交通出行 -->
+        <div class="app-card animate-on-scroll filter-item" data-category="transport">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(253,203,110,0.2), rgba(225,112,85,0.2));">
+            <i class="fas fa-car-side" style="color: #fdcb6e;"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>自动驾驶</h5>
+            <p>L2-L4级自动驾驶技术融合多传感器数据，实现环境感知、路径规划和决策控制，推动出行方式变革。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(253,203,110,0.15);color:#fdcb6e;">感知融合</span>
+              <span class="app-tag" style="background:rgba(225,112,85,0.15);color:#e17055;">决策规划</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-card animate-on-scroll filter-item" data-category="transport">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(0,206,201,0.2), rgba(108,92,231,0.2));">
+            <i class="fas fa-traffic-light" style="color: var(--secondary);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>智慧交通</h5>
+            <p>AI优化信号灯配时和交通流量调度，城市拥堵指数下降20%，通行效率显著提升。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(0,206,201,0.15);color:var(--secondary);">时序预测</span>
+              <span class="app-tag" style="background:rgba(108,92,231,0.15);color:var(--primary);">优化算法</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 创意设计 -->
+        <div class="app-card animate-on-scroll filter-item" data-category="creative">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(253,121,168,0.2), rgba(108,92,231,0.2));">
+            <i class="fas fa-wand-magic-sparkles" style="color: var(--accent);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>AI绘画创作</h5>
+            <p>Stable Diffusion、Midjourney等工具让文字描述秒变精美画作，降低创作门槛，激发无限创意。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(253,121,168,0.15);color:var(--accent);">扩散模型</span>
+              <span class="app-tag" style="background:rgba(108,92,231,0.15);color:var(--primary);">文生图</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-card animate-on-scroll filter-item" data-category="creative">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(108,92,231,0.2), rgba(0,206,201,0.2));">
+            <i class="fas fa-pen-fancy" style="color: var(--primary);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>AI写作助手</h5>
+            <p>从文案生成到代码编写，AI写作助手提升创作效率3-5倍，成为职场人士的得力工具。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(108,92,231,0.15);color:var(--primary);">大语言模型</span>
+              <span class="app-tag" style="background:rgba(0,206,201,0.15);color:var(--secondary);">内容生成</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-card animate-on-scroll filter-item" data-category="creative">
+          <div class="app-card-img" style="background: linear-gradient(135deg, rgba(0,206,201,0.2), rgba(253,203,110,0.2));">
+            <i class="fas fa-music" style="color: var(--secondary);"></i>
+          </div>
+          <div class="app-card-body">
+            <h5>AI音乐创作</h5>
+            <p>AI根据风格、情绪和节拍自动编曲创作，为视频配乐和独立音乐人提供全新创作可能。</p>
+            <div>
+              <span class="app-tag" style="background:rgba(0,206,201,0.15);color:var(--secondary);">音频生成</span>
+              <span class="app-tag" style="background:rgba(253,203,110,0.15);color:#fdcb6e;">风格迁移</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用数据统计 -->
+  <section class="section-padding" style="background: var(--dark-light);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title animate-on-scroll">AI应用<span class="gradient-text">数据概览</span></h2>
+        <p class="section-desc mx-auto animate-on-scroll">AI正在以惊人的速度渗透各行各业</p>
+      </div>
+      <div class="row g-4 text-center">
+        <div class="col-6 col-lg-3 animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number counter" data-target="78" data-suffix="%">0</div>
+            <div class="stat-label">企业已部署AI应用</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number counter" data-target="3500" data-suffix="+">0</div>
+            <div class="stat-label">AI创业公司数量</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number counter" data-target="15" data-suffix="万亿">0</div>
+            <div class="stat-label">2030年经济贡献</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number counter" data-target="200" data-suffix="+">0</div>
+            <div class="stat-label">AI应用场景覆盖</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚容器（由 components.js 动态注入） -->
+  <div id="footer-container"></div>
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 公共组件 -->
+  <script src="js/components.js"></script>
+  <!-- AI对话 -->
+  <script src="js/ai-chat.js"></script>
+  <!-- 自定义JS -->
+  <script src="js/main.js"></script>
+  <script>
+    renderNavbar('applications.html');
+    renderFooter();
+    renderAIChatWidget();
+
+    // 筛选功能
+    $(document).ready(function() {
+      $('.filter-btn').on('click', function() {
+        var filter = $(this).data('filter');
+        $('.filter-btn').removeClass('active btn-glow-primary').addClass('btn-glow-outline');
+        $(this).addClass('active btn-glow-primary').removeClass('btn-glow-outline');
+
+        if (filter === 'all') {
+          $('.filter-item').fadeIn(400);
+        } else {
+          $('.filter-item').each(function() {
+            if ($(this).data('category') === filter) {
+              $(this).fadeIn(400);
+            } else {
+              $(this).fadeOut(300);
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

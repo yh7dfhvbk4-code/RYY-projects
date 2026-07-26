@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技术介绍 - AI探索</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 导航栏容器（由 components.js 动态注入） -->
+  <div id="navbar-container"></div>
+
+  <!-- 页面Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="animate-on-scroll">AI <span class="gradient-text">核心技术</span></h1>
+        <p class="mt-3 animate-on-scroll">深入了解驱动人工智能革命的关键技术，从机器学习到前沿研究</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab切换区域 -->
+  <section class="section-padding">
+    <div class="container">
+      <div id="tech-tabs" class="mb-5">
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4 animate-on-scroll">
+          <button class="btn btn-glow btn-glow-outline tab-btn active" data-tab="tab-ml">
+            <i class="fas fa-cogs me-1"></i> 机器学习
+          </button>
+          <button class="btn btn-glow btn-glow-outline tab-btn" data-tab="tab-dl">
+            <i class="fas fa-network-wired me-1"></i> 深度学习
+          </button>
+          <button class="btn btn-glow btn-glow-outline tab-btn" data-tab="tab-nlp">
+            <i class="fas fa-language me-1"></i> 自然语言处理
+          </button>
+          <button class="btn btn-glow btn-glow-outline tab-btn" data-tab="tab-cv">
+            <i class="fas fa-eye me-1"></i> 计算机视觉
+          </button>
+        </div>
+
+        <!-- 机器学习 -->
+        <div id="tab-ml" class="tab-pane show">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+              <div class="tech-visual">
+                <div class="neural-diagram">
+                  <div class="diagram-node" style="top:20%;left:10%;background:var(--primary);">输入</div>
+                  <div class="diagram-node" style="top:10%;left:40%;background:var(--secondary);">特征</div>
+                  <div class="diagram-node" style="top:40%;left:40%;background:var(--secondary);">提取</div>
+                  <div class="diagram-node" style="top:70%;left:40%;background:var(--secondary);">选择</div>
+                  <div class="diagram-node" style="top:30%;left:70%;background:var(--accent);">模型</div>
+                  <div class="diagram-node" style="top:60%;left:70%;background:var(--accent);">训练</div>
+                  <div class="diagram-node" style="top:45%;left:90%;background:#fdcb6e;">输出</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 animate-on-scroll">
+              <h3 style="color:#fff;font-weight:700;">机器学习 <span class="gradient-text">Machine Learning</span></h3>
+              <p class="text-muted mt-3">机器学习是人工智能的核心分支，它使计算机能够从数据中自动学习规律和模式，无需显式编程即可做出预测和决策。</p>
+              <div class="mt-4">
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">监督学习</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">通过标注数据训练模型，学习输入到输出的映射关系，如分类和回归任务。</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">无监督学习</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">在无标注数据中发现隐藏结构，如聚类分析和降维。</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">强化学习</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">智能体通过与环境交互获得奖励信号，学习最优策略，如AlphaGo。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 深度学习 -->
+        <div id="tab-dl" class="tab-pane" style="display:none;">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+              <div class="tech-visual">
+                <div class="neural-diagram">
+                  <div class="diagram-node" style="top:45%;left:5%;background:var(--primary);font-size:0.6rem;">输入层</div>
+                  <div class="diagram-node" style="top:15%;left:30%;background:var(--secondary);font-size:0.6rem;">隐藏层1</div>
+                  <div class="diagram-node" style="top:45%;left:30%;background:var(--secondary);font-size:0.6rem;">隐藏层2</div>
+                  <div class="diagram-node" style="top:75%;left:30%;background:var(--secondary);font-size:0.6rem;">隐藏层3</div>
+                  <div class="diagram-node" style="top:30%;left:55%;background:var(--accent);font-size:0.6rem;">隐藏层4</div>
+                  <div class="diagram-node" style="top:60%;left:55%;background:var(--accent);font-size:0.6rem;">隐藏层5</div>
+                  <div class="diagram-node" style="top:45%;left:80%;background:#fdcb6e;font-size:0.6rem;">输出层</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 animate-on-scroll">
+              <h3 style="color:#fff;font-weight:700;">深度学习 <span class="gradient-text">Deep Learning</span></h3>
+              <p class="text-muted mt-3">深度学习是机器学习的子领域，通过构建多层神经网络来学习数据的层次化表示，在图像、语音、文本等领域取得了革命性突破。</p>
+              <div class="mt-4">
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">卷积神经网络 (CNN)</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">擅长处理网格状数据，如图像分类、目标检测等视觉任务。</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">循环神经网络 (RNN/LSTM)</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">处理序列数据的利器，广泛应用于时间序列预测和文本生成。</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">Transformer架构</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">基于自注意力机制，GPT、BERT等大模型的核心架构，引领了NLP革命。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 自然语言处理 -->
+        <div id="tab-nlp" class="tab-pane" style="display:none;">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+              <div class="tech-visual" style="padding:2rem;">
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <div style="width:40px;height:40px;border-radius:10px;background:var(--gradient-1);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;"><i class="fas fa-keyboard"></i></div>
+                    <div style="flex:1;background:var(--dark-card);border-radius:10px;padding:0.8rem 1rem;border:1px solid rgba(108,92,231,0.15);">
+                      <small style="color:var(--primary);font-weight:600;">输入文本</small>
+                      <div style="color:#fff;font-size:0.9rem;">"今天天气怎么样？"</div>
+                    </div>
+                  </div>
+                  <div class="text-center" style="color:var(--primary);"><i class="fas fa-arrow-down"></i></div>
+                  <div class="d-flex align-items-center gap-3">
+                    <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#00cec9,#00b894);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;"><i class="fas fa-cogs"></i></div>
+                    <div style="flex:1;background:var(--dark-card);border-radius:10px;padding:0.8rem 1rem;border:1px solid rgba(108,92,231,0.15);">
+                      <small style="color:var(--secondary);font-weight:600;">语义理解</small>
+                      <div style="color:#fff;font-size:0.9rem;">意图识别 + 实体提取</div>
+                    </div>
+                  </div>
+                  <div class="text-center" style="color:var(--primary);"><i class="fas fa-arrow-down"></i></div>
+                  <div class="d-flex align-items-center gap-3">
+                    <div style="width:40px;height:40px;border-radius:10px;background:var(--gradient-2);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;"><i class="fas fa-comment-dots"></i></div>
+                    <div style="flex:1;background:var(--dark-card);border-radius:10px;padding:0.8rem 1rem;border:1px solid rgba(108,92,231,0.15);">
+                      <small style="color:var(--accent);font-weight:600;">生成回复</small>
+                      <div style="color:#fff;font-size:0.9rem;">"今天北京晴，气温25度。"</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 animate-on-scroll">
+              <h3 style="color:#fff;font-weight:700;">自然语言处理 <span class="gradient-text">NLP</span></h3>
+              <p class="text-muted mt-3">自然语言处理让计算机理解、生成和处理人类语言，是AI与人交流的关键桥梁，也是大语言模型的核心技术基础。</p>
+              <div class="mt-4">
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">大语言模型 (LLM)</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">GPT、LLaMA等大模型通过海量文本训练，具备强大的语言理解和生成能力。</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">机器翻译</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">神经网络翻译已接近人类水平，支持100+语言互译，打破语言壁垒。</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">情感分析</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">自动分析文本情感倾向，广泛应用于舆情监控、产品评价分析等场景。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 计算机视觉 -->
+        <div id="tab-cv" class="tab-pane" style="display:none;">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+              <div class="tech-visual" style="padding:2rem;">
+                <div class="cv-demo">
+                  <div style="background:var(--dark-card);border-radius:12px;padding:1.5rem;border:1px solid rgba(108,92,231,0.15);position:relative;">
+                    <div style="position:absolute;top:10px;right:10px;background:rgba(253,121,168,0.2);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:600;">LIVE</div>
+                    <div class="d-flex justify-content-center gap-3 mb-3" style="font-size:3rem;">
+                      <i class="fas fa-car" style="color:var(--secondary);"></i>
+                      <i class="fas fa-person" style="color:var(--primary);"></i>
+                      <i class="fas fa-tree" style="color:#00b894;"></i>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                      <span style="background:rgba(0,206,201,0.2);color:var(--secondary);padding:3px 10px;border-radius:4px;font-size:0.75rem;">车辆 98%</span>
+                      <span style="background:rgba(108,92,231,0.2);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.75rem;">行人 95%</span>
+                      <span style="background:rgba(0,184,148,0.2);color:#00b894;padding:3px 10px;border-radius:4px;font-size:0.75rem;">植被 92%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 animate-on-scroll">
+              <h3 style="color:#fff;font-weight:700;">计算机视觉 <span class="gradient-text">Computer Vision</span></h3>
+              <p class="text-muted mt-3">计算机视觉赋予机器"看"的能力，使其能够识别、检测和理解图像与视频中的内容，是自动驾驶、安防监控等应用的核心技术。</p>
+              <div class="mt-4">
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">图像分类与检测</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">识别图像中的物体类别和位置，精度已超越人类水平。</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">人脸识别</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">广泛应用于身份验证、安防监控，准确率达99.8%以上。</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                  <div class="me-3 mt-1" style="color:var(--secondary);"><i class="fas fa-check-circle"></i></div>
+                  <div>
+                    <h6 style="color:#fff;font-weight:600;">图像生成与编辑</h6>
+                    <p class="text-muted mb-0" style="font-size:0.9rem;">扩散模型实现文生图、图像修复和风格迁移，催生AI绘画革命。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术对比 -->
+  <section class="section-padding" style="background: var(--dark-light);">
+    <div class="container">
+      <div class="text-center mb-10">
+        <h2 class="section-title animate-on-scroll">技术<span class="gradient-text">对比</span></h2>
+        <p class="section-desc mx-auto animate-on-scroll">不同AI技术方向的特点与适用场景</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 机器学习 -->
+        <div class="col-lg-3 col-md-6 animate-on-scroll">
+          <div class="tech-card">
+            <div class="tech-icon" style="background: linear-gradient(135deg, var(--primary), #5b4cdb);">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3 class="tech-title">机器学习</h3>
+            <div class="tech-info">
+              <div class="info-item">
+                <span class="info-label">核心算法</span>
+                <span class="info-value">SVM、随机森林、XGBoost</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">典型应用</span>
+                <span class="info-value">推荐系统、风控预测</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">优势</span>
+                <span class="info-value" style="color:#00cec9;">可解释性强、数据需求少</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">局限性</span>
+                <span class="info-value" style="color:#fd79a8;">特征工程依赖人工</span>
+              </div>
+            </div>
+            <div class="tech-rating">
+              <div class="rating-bar">
+                <div class="rating-fill" style="width: 75%;"></div>
+              </div>
+              <span>综合评分: 7.5/10</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 深度学习 -->
+        <div class="col-lg-3 col-md-6 animate-on-scroll">
+          <div class="tech-card">
+            <div class="tech-icon" style="background: linear-gradient(135deg, var(--secondary), #00b894);">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3 class="tech-title">深度学习</h3>
+            <div class="tech-info">
+              <div class="info-item">
+                <span class="info-label">核心算法</span>
+                <span class="info-value">CNN、RNN、Transformer</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">典型应用</span>
+                <span class="info-value">图像识别、语音合成</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">优势</span>
+                <span class="info-value" style="color:#00cec9;">自动特征提取、精度高</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">局限性</span>
+                <span class="info-value" style="color:#fd79a8;">需要大量数据和算力</span>
+              </div>
+            </div>
+            <div class="tech-rating">
+              <div class="rating-bar">
+                <div class="rating-fill" style="width: 90%;"></div>
+              </div>
+              <span>综合评分: 9.0/10</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 自然语言处理 -->
+        <div class="col-lg-3 col-md-6 animate-on-scroll">
+          <div class="tech-card">
+            <div class="tech-icon" style="background: linear-gradient(135deg, var(--accent), #e84393);">
+              <i class="fas fa-language"></i>
+            </div>
+            <h3 class="tech-title">自然语言处理</h3>
+            <div class="tech-info">
+              <div class="info-item">
+                <span class="info-label">核心算法</span>
+                <span class="info-value">BERT、GPT、T5</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">典型应用</span>
+                <span class="info-value">对话系统、文本摘要</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">优势</span>
+                <span class="info-value" style="color:#00cec9;">语言理解能力强</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">局限性</span>
+                <span class="info-value" style="color:#fd79a8;">幻觉问题、事实性待提升</span>
+              </div>
+            </div>
+            <div class="tech-rating">
+              <div class="rating-bar">
+                <div class="rating-fill" style="width: 88%;"></div>
+              </div>
+              <span>综合评分: 8.8/10</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 计算机视觉 -->
+        <div class="col-lg-3 col-md-6 animate-on-scroll">
+          <div class="tech-card">
+            <div class="tech-icon" style="background: linear-gradient(135deg, #fdcb6e, #f39c12);">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3 class="tech-title">计算机视觉</h3>
+            <div class="tech-info">
+              <div class="info-item">
+                <span class="info-label">核心算法</span>
+                <span class="info-value">YOLO、ViT、Stable Diffusion</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">典型应用</span>
+                <span class="info-value">自动驾驶、医学影像</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">优势</span>
+                <span class="info-value" style="color:#00cec9;">视觉感知能力突出</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">局限性</span>
+                <span class="info-value" style="color:#fd79a8;">对抗样本脆弱性</span>
+              </div>
+            </div>
+            <div class="tech-rating">
+              <div class="rating-bar">
+                <div class="rating-fill" style="width: 85%;"></div>
+              </div>
+              <span>综合评分: 8.5/10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚容器（由 components.js 动态注入） -->
+  <div id="footer-container"></div>
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 公共组件 -->
+  <script src="js/components.js"></script>
+  <!-- AI对话 -->
+  <script src="js/ai-chat.js"></script>
+  <!-- 自定义JS -->
+  <script src="js/main.js"></script>
+  <script>
+    renderNavbar('technology.html');
+    renderFooter();
+    renderAIChatWidget();
+
+    // 初始化Tab切换
+    initTabs('tech-tabs');
+  </script>
+</body>
+</html>

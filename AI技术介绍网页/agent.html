@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent技术发展 - AI探索</title>
+  <!-- Bootstrap 5.3.8 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- 自定义样式 -->
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .agent-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .agent-icon:hover {
+      transform: scale(1.1);
+    }
+    
+    .copilot-icon {
+      background: linear-gradient(135deg, #58a6ff, #1f6feb);
+    }
+    
+    .codex-icon {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+    
+    .claude-icon {
+      background: linear-gradient(135deg, #06b6d4, #0891b2);
+    }
+    
+    .cursor-icon {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+    }
+    
+    .codellama-icon {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+    }
+    
+    .codewhisperer-icon {
+      background: linear-gradient(135deg, #ff9900, #f59e0b);
+    }
+    
+    .gpt4-icon {
+      background: linear-gradient(135deg, #a855f7, #9333ea);
+    }
+    
+    .history-timeline {
+      position: relative;
+      height: 450px;
+      margin: 0 auto;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    
+    .timeline-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .timeline-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: drawLine 3s ease-out forwards;
+    }
+    
+    @keyframes drawLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    
+    .timeline-events {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .event {
+      position: absolute;
+      transform: translateY(-50%);
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .event:nth-child(1) { animation-delay: 0.5s; }
+    .event:nth-child(2) { animation-delay: 0.7s; }
+    .event:nth-child(3) { animation-delay: 0.9s; }
+    .event:nth-child(4) { animation-delay: 1.1s; }
+    .event:nth-child(5) { animation-delay: 1.3s; }
+    .event:nth-child(6) { animation-delay: 1.5s; }
+    .event:nth-child(7) { animation-delay: 1.7s; }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .event-dot {
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      border: 3px solid rgba(30, 30, 58, 0.9);
+      box-shadow: 0 0 15px rgba(108, 92, 231, 0.5);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .event:hover .event-dot {
+      transform: scale(1.5);
+      box-shadow: 0 0 25px rgba(108, 92, 231, 0.8);
+    }
+    
+    .event-content {
+      max-width: 160px;
+      padding: 12px 16px;
+      background: rgba(30, 30, 58, 0.95);
+      border-radius: 12px;
+      border: 1px solid rgba(108, 92, 231, 0.3);
+      margin-top: 10px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .event:hover .event-content {
+      transform: translateY(-5px);
+      border-color: rgba(108, 92, 231, 0.6);
+    }
+    
+    .event-left .event-content {
+      margin-left: 20px;
+    }
+    
+    .event-right .event-content {
+      margin-left: -20px;
+    }
+    
+    .event-content h4 {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 6px 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .event-content p {
+      color: #b8b8d0;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    .future-event .future-dot {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px rgba(108, 92, 231, 0.6), 0 0 60px rgba(0, 206, 201, 0.3);
+      animation: agentPulse 2s infinite;
+    }
+    
+    @keyframes agentPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(108, 92, 231, 0.6), 0 0 60px rgba(0, 206, 201, 0.3);
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px rgba(108, 92, 231, 0.8), 0 0 80px rgba(0, 206, 201, 0.5);
+      }
+    }
+    
+    .future-icon {
+      color: #fff;
+      font-size: 1.5rem;
+      animation: bounce 1s ease-in-out infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    .future-event .event-content {
+      margin-left: -20px;
+      border-color: rgba(0, 206, 201, 0.5);
+    }
+
+    @media (max-width: 991.98px) {
+      .history-timeline {
+        height: 600px;
+      }
+      
+      .event {
+        width: 45%;
+      }
+      
+      .event-left,
+      .event-right {
+        left: 5% !important;
+      }
+      
+      .event-content {
+        max-width: 100%;
+        margin-left: 25px !important;
+      }
+      
+      .future-event {
+        left: 5% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏容器（由 components.js 动态注入） -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero区域 -->
+  <section class="hero-section">
+    <canvas id="particles-canvas"></canvas>
+    <div class="container hero-content">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="hero-badge animate-on-scroll">
+            <i class="fas fa-rocket me-1"></i> AI编程助手与智能体技术
+          </div>
+          <h1 class="hero-title animate-on-scroll">
+            <span class="gradient-text">Agent</span>技术发展
+          </h1>
+          <p class="hero-subtitle animate-on-scroll">
+            从代码助手到自主智能体，AI Agent正在重塑软件开发与自动化的未来。探索GitHub Copilot、Claude Code等领先技术的演进之路。
+          </p>
+          <div class="d-flex gap-3 animate-on-scroll">
+            <a href="#codex" class="btn btn-glow btn-glow-primary">
+              <i class="fas fa-code me-2"></i>探索技术
+            </a>
+            <a href="#trends" class="btn btn-glow btn-glow-outline">
+              <i class="fas fa-chart-line me-2"></i>发展趋势
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+          <div class="hero-visual">
+            <div class="ai-orb">
+              <div class="orb-ring ring-1"></div>
+              <div class="orb-ring ring-2"></div>
+              <div class="orb-ring ring-3"></div>
+              <div class="orb-core"><i class="fas fa-robot"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Copilot & Codex介绍 -->
+  <section id="codex" class="section-padding">
+    <div class="container">
+      <div class="text-center mb-10">
+        <h2 class="section-title">
+          <span class="gradient-text">GitHub Copilot</span> & Codex
+        </h2>
+        <p class="section-desc">AI编程助手的开创者，开启代码生成新时代</p>
+      </div>
+
+      <div class="row g-6">
+        <!-- GitHub Copilot -->
+        <div class="col-lg-6">
+          <div class="card-custom h-full" style="padding: 2.5rem;">
+            <div class="agent-icon copilot-icon mx-auto">
+              <i class="fab fa-github text-white"></i>
+            </div>
+            <h3 style="color:#fff;font-size:1.5rem;margin-bottom:1rem;text-align:center;">GitHub Copilot</h3>
+            <p style="color:#b8b8d0;font-size:0.95rem;line-height:1.8;">
+              GitHub Copilot是由GitHub与OpenAI合作开发的AI编程助手，基于Codex模型。它能理解自然语言描述，自动生成代码建议，支持多种编程语言和框架。
+            </p>
+            <div class="mt-4 text-center">
+              <a href="https://github.com/features/copilot" target="_blank" class="btn btn-glow btn-glow-outline-sm">了解更多</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Codex -->
+        <div class="col-lg-6">
+          <div class="card-custom h-full" style="padding: 2.5rem;">
+            <div class="agent-icon codex-icon mx-auto">
+              <i class="fas fa-code" style="color: white;"></i>
+            </div>
+            <h3 style="color:#fff;font-size:1.5rem;margin-bottom:1rem;text-align:center;">OpenAI Codex</h3>
+            <p style="color:#b8b8d0;font-size:0.95rem;line-height:1.8;">
+              OpenAI Codex是GPT-3的代码专用版本，经过海量代码训练。它能够将自然语言转换为代码，支持Python、JavaScript、Go等数十种编程语言。
+            </p>
+            <div class="mt-4 text-center">
+              <a href="https://openai.com/blog/openai-codex" target="_blank" class="btn btn-glow btn-glow-outline-sm">了解更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Claude Code介绍 -->
+  <section class="section-padding" style="background: var(--dark-light);">
+    <div class="container">
+      <div class="text-center mb-10">
+        <h2 class="section-title">
+          <span class="gradient-text">Claude Code</span>
+        </h2>
+        <p class="section-desc">Anthropic推出的专业级代码助手，注重安全性和可靠性</p>
+      </div>
+
+      <div class="card-custom" style="padding: 3rem;">
+        <div class="row g-6 align-items-center">
+          <div class="col-lg-5 text-center">
+            <div class="agent-icon claude-icon mx-auto" style="width: 100px; height: 100px; font-size: 3rem;">
+              <i class="fas fa-shield-alt text-white"></i>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <h3 style="color:#fff;font-size:1.8rem;margin-bottom:1.5rem;">Claude Code</h3>
+            <p style="color:#b8b8d0;font-size:1.1rem;line-height:1.8;">
+              Claude Code是Anthropic公司推出的专门针对代码生成的AI助手，基于Claude 3模型。它不仅能生成高质量代码，还具备强大的代码理解和分析能力。Claude Code以安全性为核心设计原则，减少生成有害代码的风险，特别适合企业级应用场景。
+            </p>
+            <div class="mt-4 row g-3">
+              <div class="col-md-6">
+                <div class="feature-item" style="display: flex; align-items: center;">
+                  <i class="fas fa-check-circle" style="color:#00cec9;margin-right:0.5rem;"></i>
+                  <span style="color:#e0e0f0;">支持超长上下文窗口</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="feature-item" style="display: flex; align-items: center;">
+                  <i class="fas fa-check-circle" style="color:#00cec9;margin-right:0.5rem;"></i>
+                  <span style="color:#e0e0f0;">严格的安全审查机制</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="feature-item" style="display: flex; align-items: center;">
+                  <i class="fas fa-check-circle" style="color:#00cec9;margin-right:0.5rem;"></i>
+                  <span style="color:#e0e0f0;">多语言代码分析</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="feature-item" style="display: flex; align-items: center;">
+                  <i class="fas fa-check-circle" style="color:#00cec9;margin-right:0.5rem;"></i>
+                  <span style="color:#e0e0f0;">企业级部署支持</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <a href="https://www.anthropic.com/index/claude-code" target="_blank" class="btn btn-glow btn-glow-outline">了解更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 其他Agent技术 -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-10">
+        <h2 class="section-title">
+          更多<span class="gradient-text">Agent技术</span>
+        </h2>
+        <p class="section-desc">探索其他领先的AI Agent平台和工具</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Cursor -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-custom h-full text-center" style="padding:2rem;">
+            <div class="agent-icon cursor-icon mx-auto">
+              <i class="fas fa-code text-white"></i>
+            </div>
+            <h5 style="color:#fff;font-weight:700;margin-bottom:1rem;">Cursor</h5>
+            <p style="color:#b8b8d0;font-size:0.9rem;">
+              内置GPT-4的智能代码编辑器，支持AI驱动的代码补全和重构。
+            </p>
+            <a href="https://www.cursor.sh/" target="_blank" class="learn-more mt-3">了解更多</a>
+          </div>
+        </div>
+
+        <!-- CodeLlama -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-custom h-full text-center" style="padding:2rem;">
+            <div class="agent-icon codellama-icon mx-auto">
+              <i class="fab fa-python" style="color: white;"></i>
+            </div>
+            <h5 style="color:#fff;font-weight:700;margin-bottom:1rem;">CodeLlama</h5>
+            <p style="color:#b8b8d0;font-size:0.9rem;">
+              Meta开源的代码大模型，支持多种编程语言，可本地部署。
+            </p>
+            <a href="https://ai.meta.com/codellama/" target="_blank" class="learn-more mt-3">了解更多</a>
+          </div>
+        </div>
+
+        <!-- Amazon CodeWhisperer -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-custom h-full text-center" style="padding:2rem;">
+            <div class="agent-icon codewhisperer-icon mx-auto">
+              <i class="fab fa-aws text-white"></i>
+            </div>
+            <h5 style="color:#fff;font-weight:700;margin-bottom:1rem;">CodeWhisperer</h5>
+            <p style="color:#b8b8d0;font-size:0.9rem;">
+              AWS推出的AI编程助手，与云服务深度集成，支持多种IDE。
+            </p>
+            <a href="https://aws.amazon.com/cn/codewhisperer/" target="_blank" class="learn-more mt-3">了解更多</a>
+          </div>
+        </div>
+
+        <!-- GPT-4 Code Interpreter -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-custom h-full text-center" style="padding:2rem;">
+            <div class="agent-icon gpt4-icon mx-auto">
+              <i class="fas fa-brain" style="color: white;"></i>
+            </div>
+            <h5 style="color:#fff;font-weight:700;margin-bottom:1rem;">GPT-4 Code Interpreter</h5>
+            <p style="color:#b8b8d0;font-size:0.9rem;">
+              OpenAI的代码解释器，支持执行代码、分析数据、生成可视化图表。
+            </p>
+            <a href="https://openai.com/research/code-interpreter" target="_blank" class="learn-more mt-3">了解更多</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agent技术发展历程 -->
+  <section id="trends" class="section-padding" style="background: var(--dark-light);">
+    <div class="container">
+      <div class="text-center mb-10">
+        <h2 class="section-title">
+          Agent技术<span class="gradient-text">发展历程</span>
+        </h2>
+        <p class="section-desc">从代码助手到自主智能体的演进之路</p>
+      </div>
+
+      <div class="history-timeline">
+        <svg class="timeline-svg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#6c5ce7;stop-opacity:1" />
+              <stop offset="30%" style="stop-color:#00cec9;stop-opacity:1" />
+              <stop offset="60%" style="stop-color:#6c5ce7;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#00cec9;stop-opacity:1" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <filter id="glow2">
+              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path d="M20 400 Q100 350 200 380 Q300 410 400 350 Q500 290 600 340 Q700 390 800 320 Q900 250 1000 300 Q1100 350 1180 180" 
+                fill="none" 
+                stroke="#6c5ce7" 
+                stroke-width="8"
+                stroke-linecap="round"
+                filter="url(#glow2)"
+                opacity="0.3"/>
+          <path d="M20 400 Q100 350 200 380 Q300 410 400 350 Q500 290 600 340 Q700 390 800 320 Q900 250 1000 300 Q1100 350 1180 180" 
+                fill="none" 
+                stroke="url(#lineGradient)" 
+                stroke-width="4"
+                stroke-linecap="round"
+                filter="url(#glow)"
+                class="timeline-path"/>
+        </svg>
+
+        <div class="timeline-events">
+          <div class="event event-left" style="top: 80%; left: 2%;">
+            <div class="event-dot"></div>
+            <div class="event-content">
+              <h4>代码生成萌芽</h4>
+              <p>早期AI代码生成研究起步</p>
+            </div>
+          </div>
+
+          <div class="event event-right" style="top: 68%; left: 16%;">
+            <div class="event-dot"></div>
+            <div class="event-content">
+              <h4>2020</h4>
+              <p>GPT-3发布，开启大规模代码生成</p>
+            </div>
+          </div>
+
+          <div class="event event-left" style="top: 50%; left: 33%;">
+            <div class="event-dot"></div>
+            <div class="event-content">
+              <h4>2021</h4>
+              <p>Codex发布，GitHub Copilot上线</p>
+            </div>
+          </div>
+
+          <div class="event event-right" style="top: 36%; left: 49%;">
+            <div class="event-dot"></div>
+            <div class="event-content">
+              <h4>2022</h4>
+              <p>智能体概念兴起，AutoGPT出现</p>
+            </div>
+          </div>
+
+          <div class="event event-left" style="top: 48%; left: 65%;">
+            <div class="event-dot"></div>
+            <div class="event-content">
+              <h4>2023</h4>
+              <p>多模态Agent，GPT-4V发布</p>
+            </div>
+          </div>
+
+          <div class="event event-right" style="top: 30%; left: 80%;">
+            <div class="event-dot"></div>
+            <div class="event-content">
+              <h4>2024</h4>
+              <p>Agent生态繁荣，Claude 3、Gemini登场</p>
+            </div>
+          </div>
+
+          <div class="event future-event" style="top: 22%; left: 94%;">
+            <div class="future-dot">
+              <span class="future-icon">
+                <i class="fas fa-rocket"></i>
+              </span>
+            </div>
+            <div class="event-content">
+              <h4>未来</h4>
+              <p>通用智能体时代</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚容器（由 components.js 动态注入） -->
+  <div id="footer-container"></div>
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 公共组件 -->
+  <script src="js/components.js"></script>
+  <!-- AI对话 -->
+  <script src="js/ai-chat.js"></script>
+  <!-- 自定义JS -->
+  <script src="js/main.js"></script>
+  <script>
+    renderNavbar('agent.html');
+    renderFooter();
+    renderAIChatWidget();
+
+    // 初始化粒子动画
+    initParticles('particles-canvas');
+  </script>
+</body>
+</html>
