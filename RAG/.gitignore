@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 虚拟环境
+.venv/
+
+# 索引持久化（由 build 生成）
+storage/
+
+# IDE
+.idea/
+.vscode/
